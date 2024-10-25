@@ -1,7 +1,7 @@
 import { ChevronRight, Download } from "lucide-react";
 import ShinyButton from "./ui/Button";
 import Link from "next/link";
-import { TextGenerateEffect } from "./TextGenerate";
+import { TextGenerateEffect } from "./ui/TextGenerate";
 import React from "react";
 
 const words = "Advanced Development & Data Engineering Solutions";

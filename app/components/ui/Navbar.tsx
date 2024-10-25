@@ -10,6 +10,12 @@ import Link from "next/link";
 import React from "react";
 import { useState } from "react";
 
+type navItem = {
+	name: string;
+	link: string;
+	icon?: JSX.Element | undefined;
+};
+
 export const Navbar = ({
 	navItems,
 	className,
@@ -27,9 +33,8 @@ export const Navbar = ({
 
 	useMotionValueEvent(scrollYProgress, "change", (current) => {
 		// Check if current is not undefined and is a number
-		console.log(navItems);
 		if (typeof current === "number") {
-			let direction = current! - scrollYProgress.getPrevious()!;
+			const direction = current! - scrollYProgress.getPrevious()!;
 
 			if (scrollYProgress.get() < 0.05) {
 				setVisible(true);
@@ -68,7 +73,7 @@ export const Navbar = ({
 			className
 			)}
 			>
-			{navItems.map((navItem: any, idx: number) => (
+			{navItems.map((navItem: navItem, idx: number) => (
 				<Link
 				key={`link=${idx}`}
 				href={navItem.link}
