@@ -32,7 +32,7 @@ export const Navbar = ({
 	const [visible, setVisible] = useState(true);
 
 	useMotionValueEvent(scrollYProgress, "change", (current) => {
-		// Check if current is not undefined and is a number
+		// Sanity check
 		if (typeof current === "number") {
 			const direction = current! - scrollYProgress.getPrevious()!;
 
@@ -68,9 +68,7 @@ export const Navbar = ({
 			}}
 			className={cn(
 			`flex max-w-fit fixed top-10 inset-x-0 mx-auto border border-dark-700 rounded-lg bg-dark-200
-			shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)] z-[5000] px-8 py-4
-			items-center justify-center space-x-4`,
-			className
+			 z-[5000] px-8 py-4 items-center justify-center space-x-4`, className
 			)}
 			>
 			{navItems.map((navItem: navItem, idx: number) => (
@@ -78,7 +76,7 @@ export const Navbar = ({
 				key={`link=${idx}`}
 				href={navItem.link}
 				className={cn(
-					"relative text-neutral-50 items-center flex space-x-1 hover:text-neutral-300"
+					"relative text-neutral-50 items-center flex space-x-4 hover:text-neutral-300"
 				)}
 				>
 				<span className="block sm:hidden">{navItem.icon}</span>

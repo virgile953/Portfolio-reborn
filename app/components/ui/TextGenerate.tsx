@@ -31,6 +31,15 @@ export const TextGenerateEffect = ({
     );
   }, [scope, duration, filter, animate]);
 
+  const blackChars = ["&", "-", "_"];
+  function wordis(word: string) : boolean {
+    let ret : boolean = true;
+    blackChars.forEach((char) => {
+      if (word == char.toString())
+        ret = false;
+    });
+    return ret;
+  }
   const renderWords = () => {
     return (
       <motion.div ref={scope}>
@@ -39,7 +48,7 @@ export const TextGenerateEffect = ({
             <motion.span
               key={word + idx}
               className={`${
-                idx > 0 && idx < wordsArray.length - 1
+                idx > 0 && idx < wordsArray.length - 1 && wordis(word) == true//word != "&"
                   ? "text-primary"
                   : "dark:text-white text-black"
               } opacity-0`}

@@ -24,9 +24,8 @@ const Skills = () => {
           transition={{ duration: 0.5, delay: 0.25 }}
           className="text-sm min-[430px]:text-base max-w-lg md:max-w-3xl text-dark-200/70 dark:text-stone-200/70"
         >
-          I&apos;m proficient in a range of modern technologies that empower me
-          to build highly functional solutions. These are some of my main
-          technologies.
+          I&apos;m proficient in a range of modern technologies that help me
+          build highly functional solutions. These are some of my main technologies.
         </motion.p>
       </div>
 
