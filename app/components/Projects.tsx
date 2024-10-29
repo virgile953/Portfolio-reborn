@@ -13,7 +13,7 @@ const ProjectsSection = () => {
         </h2>
 
         <Button icon={<ChevronRight />}>
-          <Link href="https://github.com/andrijaweb" target="_blank">
+          <Link href="https://github.com/virgile953" target="_blank">
             All Projects
           </Link>
         </Button>
