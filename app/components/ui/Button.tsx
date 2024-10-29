@@ -8,6 +8,7 @@ const Button = ({
   children: React.ReactNode;
   icon?: React.ReactNode;
   iconPosition?: "left" | "right";
+
 }) => {
   return (
     <button className="self-start relative z-10 inline-flex gap-2.5 h-12 animate-shimmer items-center justify-center

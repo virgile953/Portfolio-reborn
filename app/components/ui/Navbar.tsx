@@ -1,4 +1,10 @@
 "use client";
+import { BriefcaseBusiness,
+	House,
+	UserRound,
+	Contact as ContactIco,
+	Moon
+	} from "lucide-react";
 import { cn } from "../../lib/utils"
 import {
 	AnimatePresence,
@@ -16,24 +22,36 @@ type navItem = {
 	icon?: JSX.Element | undefined;
 };
 
-export const Navbar = ({
-	navItems,
-	className,
-}: {
-	navItems: {
-		name: string;
-		link: string;
-		icon?: JSX.Element;
-	}[];
-	className?: string;
-}) => {
+const navItems = [
+	{ name: "Home", link: "#home", icon: <House /> },
+	{ name: "Work", link: "#work", icon: <BriefcaseBusiness /> },
+	{ name: "About", link: "#about", icon: <UserRound /> },
+	{ name: "Contact", link: "#contact", icon: <ContactIco /> },
+  ];
+
+let useAnimation: boolean = true;
+
+export const Navbar = ({redirectionType, animate} : {redirectionType?: "local" | "global", animate?: boolean}) => {
 	const { scrollYProgress } = useScroll();
+
+	if (animate == false)
+		useAnimation = false;
+	else
+		useAnimation = true;
+
+	if (redirectionType && redirectionType === "global")
+	{
+		navItems.forEach(item => {
+			if (!item.link.startsWith("/"))
+				item.link = "/" + item.link;
+		})
+	}
 
 	const [visible, setVisible] = useState(true);
 
 	useMotionValueEvent(scrollYProgress, "change", (current) => {
 		// Sanity check
-		if (typeof current === "number") {
+		if (typeof current === "number" && useAnimation) {
 			const direction = current! - scrollYProgress.getPrevious()!;
 
 			if (scrollYProgress.get() < 0.05) {
@@ -66,10 +84,8 @@ export const Navbar = ({
 			transition={{
 			duration: 0.2,
 			}}
-			className={cn(
-			`flex max-w-fit fixed top-10 inset-x-0 mx-auto border border-dark-700 rounded-lg bg-dark-200
-			 z-[5000] px-8 py-4 items-center justify-center space-x-4`, className
-			)}
+			className="flex max-w-fit fixed top-10 inset-x-0 mx-auto border border-dark-700 rounded-lg bg-dark-200
+			 z-[5000] px-8 py-4 items-center justify-center space-x-4"
 			>
 			{navItems.map((navItem: navItem, idx: number) => (
 				<Link
@@ -82,7 +98,24 @@ export const Navbar = ({
 				<span className="block sm:hidden">{navItem.icon}</span>
 				<span className="hidden sm:block font-medium">{navItem.name}</span>
 				</Link>
+
 			))}
+			<button className="self-start relative z-10 inline-flex gap-2.5 h-12 items-center justify-center
+					rounded-md border border-dark-700
+					px-4 font-medium text-sm sm:text-base
+					text-slate-200 transition-colors
+					hover:bg-slate-800"
+				onClick={() => {
+					if (localStorage.getItem("theme") == "light")
+						localStorage.setItem("theme", "dark")
+					else
+						localStorage.setItem("theme", "light")
+
+				}}
+				>
+				<span className="block sm:hidden"><Moon /></span>
+				<span className="hidden sm:block font-medium"><Moon /></span>
+			</button>
 			</motion.div>
 			</AnimatePresence>
 		);

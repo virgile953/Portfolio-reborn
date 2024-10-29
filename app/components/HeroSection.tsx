@@ -47,7 +47,7 @@ const HeroSection = () => {
               download
               className="flex items-center gap-2.5 group"
             >
-              <Download className="text-primary" />
+              <Download className="text-primary hover:text-primary/80" />
               <span className="group-hover:text-black/70 dark:group-hover:text-white/70 transition-colors duration-200 font-semibold">
                 Download CV
               </span>

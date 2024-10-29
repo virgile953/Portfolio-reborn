@@ -49,61 +49,67 @@ export const techCardsItems = [
   },
 ];
 
-// export const portfolioProjects = [
-//   {
-//     id: "shoptidy",
-//     heading: "Shoptidy",
-//     subheading: "a modern e-commerce website",
-//     description:
-//       "A modern website with all ecommerce functionalities. It includes features like product browsing, shopping cart, user authentication, ordering a product... The application is developed with react + typescript for frontend part, and Supabase as backend.",
-//     imageUrl: "/imgs/projects/portfolio-mockup2.png",
-//     techStack: [
-//       "TypeScript",
-//       "React",
-//       "Redux",
-//       "Supabase",
-//       "TailwindCSS",
-//       "shadcn/ui",
-//     ],
-//     liveDemoUrl: "https://shoptidy.vercel.app",
-//     sourceCodeUrl: "https://github.com/andrijaweb/ecommerce-app",
-//   },
-//   {
-//     id: "socialsphere",
-//     heading: "SocialSphere",
-//     subheading: "connect with your friends online",
-//     description:
-//       "Beautifully designed social media application with all functionalities of modern social app. Users can create, edit, and delete posts, as well as explore posts from others. The app features profile management where users can view and edit their profiles, and also save posts for later.",
-//     imageUrl: "/imgs/projects/portfolio-mockup1.png",
-//     techStack: [
-//       "JavaScript",
-//       "React",
-//       "CRUD",
-//       "Appwrite",
-//       "TailwindCSS",
-//       "TanStack",
-//     ],
-//     liveDemoUrl: "https://socialspherenetwork.vercel.app",
-//     sourceCodeUrl: "https://github.com/andrijaweb/socialmedia-reactapp",
-//   },
-//   {
-//     id: "nextcut",
-//     heading: "NextCut",
-//     subheading: "a fresh cut in a few clicks",
-//     description:
-//       "A responsive web application designed to schedule and manage barber appointments. Potentional customers can create their account and schedule a new haircut. There is clearly defined period of time that is awailable for bookings. Admin have information about all appointments on dashboard page, and he is able to manage them in few clicks.",
-//     imageUrl: "/imgs/projects/portfolio-mockup3.jpg",
-//     techStack: [
-//       "TypeScript",
-//       "NextJS",
-//       "Appwrite",
-//       "TailwindCSS",
-//       "Advanced forms",
-//     ],
-//     liveDemoUrl: "https://nextcut.vercel.app",
-//     sourceCodeUrl: "https://github.com/andrijaweb/nextCut-app",
-//   },
-// ];
+export const portfolioProjects = [
+  {
+    id: "Portfolio_website",
+    heading: "Portfolio Website",
+    subheading: "A First portfolio website",
+    description:
+      `A modern portfolio website with all the info it needs to convey. It includes features automatic theme detection from system, a color changer, settings memorization and database fetching for all the projects's data. The website is developed with NextJs & typescript for the frontend parts, and Vercel & PostgresDB for the backend.
+
+      It has some shortcomings though, mainly it's looks, but it served well as a first "from scratch" project`,
+    imageUrl: "/imgs/projects/portfolio.svg",
+    techStack: [
+      "TypeScript",
+      "NextJS",
+      "Postgres",
+      "TailwindCSS",
+      "Vercel",
+      "Bun",
+    ],
+    liveDemoUrl: "https://vbarbera.com",
+    sourceCodeUrl: "https://github.com/virgile953/portfolio",
+  },
+  {
+    id: "Portfolio_Redesign",
+    heading: "Portfolio Redesign",
+    subheading: "A fresh, refined approach to showcasing my work",
+    description:
+    `Building on the foundation of my first portfolio, I incorporated user feedback and my growing experience to create a polished redesign. This version emphasizes both form and function, with a visually pleasing and cohesive aesthetic powered by Tailwind CSS. Code structure and readability have also been significantly improved, making it easier to maintain and scale.
+    Designed with Next.js, the new portfolio is faster, cleaner, and fully optimized for a better user experience.`,
+    imageUrl: "/imgs/projects/portfolio_redesign.svg",
+    techStack: [
+      "Typescript",
+      "NextJS",
+      "TailwindCSS",
+    ],
+    liveDemoUrl: "https://portfolio-reborn.vercel.app",
+    sourceCodeUrl: "https://github.com/virgile953/Portfolio-reborn",
+  },
+  {
+    id: "Winflotte",
+    heading: "Winflotte",
+    subheading: "Modernization of the legacy Winflotte application",
+    description:
+      `The Winflotte project was a complete redesign of a legacy SAS application used by fleet managers to streamline operations and data management. Aiming to enhance both user experience and performance, this project introduced a more intuitive interface, improved data visualization, and integrated advanced analytics features.
+
+      Key updates included moving portions of the legacy Windows-based program to a web-based API application, optimizing backend processes in C#, and enhancing frontend interfaces with Angular and TypeScript. Performance was further optimized with Microsoft SQL Server and RabbitMQ for efficient data handling and logging.
+
+      The redesign significantly boosted user satisfaction, reduced onboarding time for new users, and greatly enhanced overall efficiency for fleet management teams.`,
+    imageUrl: "/imgs/projects/Winflotte.svg",
+    techStack: [
+      "TypeScript",
+      "Angular",
+      "C#",
+      "Windev / Webdev",
+      "Microsoft SQL Server",
+      "HFSQL",
+      "PowerBI",
+    ],
+    liveDemoUrl: "",
+    sourceCodeUrl: "",
+},
+];
 
 // export const tooltipItems = [
 //   {
