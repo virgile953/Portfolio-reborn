@@ -82,13 +82,15 @@ export const portfolioProjects = [
       "Typescript",
       "NextJS",
       "TailwindCSS",
+      "Vercel",
+      "Bun",
     ],
     liveDemoUrl: "https://portfolio-reborn.vercel.app",
     sourceCodeUrl: "https://github.com/virgile953/Portfolio-reborn",
   },
   {
     id: "Winflotte",
-    heading: "Winflotte",
+    heading: "Winflotte modernization",
     subheading: "Modernization of the legacy Winflotte application",
     description:
       `The Winflotte project was a complete redesign of a legacy SAS application used by fleet managers to streamline operations and data management. Aiming to enhance both user experience and performance, this project introduced a more intuitive interface, improved data visualization, and integrated advanced analytics features.
@@ -109,31 +111,28 @@ export const portfolioProjects = [
     liveDemoUrl: "",
     sourceCodeUrl: "",
 },
-];
+{
+  id: "EDI_Automation",
+  heading: "Automated EDI File Processing Software",
+  subheading: "Streamlining EDI transactions through automation",
+  description:
+    `This project was for the developpement of an automated solution for processing Electronic Data Interchange (EDI) files, optimizing business operations and minimizing manual data handling. Key features include mailbox reading based on SQL settings, automated EDI file parsing, customizable data mapping, and integration with existing business systems. Additionally, it provides real-time reporting, error handling, and an interface for configuration and monitoring.
 
-// export const tooltipItems = [
-//   {
-//     id: 1,
-//     name: "Bogdan Aleksic",
-//     designation: "Great job!",
-//     image: "/imgs/avatars/bogdan.svg",
-//   },
-//   {
-//     id: 2,
-//     name: "Djordje Djurovic",
-//     designation: "Incredibly responsible",
-//     image: "/imgs/avatars/djordje.jpeg",
-//   },
-//   {
-//     id: 3,
-//     name: "Anthony Sean",
-//     designation: "Highly recommended!",
-//     image: "/imgs/avatars/Anthony.jpg",
-//   },
-//   {
-//     id: 4,
-//     name: "Alex Finn",
-//     designation: "Enjoyable experience.",
-//     image: "/imgs/avatars/Alex.jpg",
-//   },
-// ];
+    Using technologies such as C# for core logic, Angular/TypeScript for the user interface, SQL Server for data storage, and PowerShell scripts executed by Windows Scheduler, the solution has enabled significant time savings, and improved data accuracy and efficiency for the EDI process.`,
+  imageUrl: "/imgs/projects/portfolioEmail.svg",
+  techStack: [
+    "C#",
+    "RabbitMQ",
+    "Angular",
+    "TypeScript",
+    "Windev / HFSQL",
+    "SQL Server",
+    "PowerShell",
+    "Windows Scheduler",
+    "Visual Studio",
+  ],
+  liveDemoUrl: "",
+  sourceCodeUrl: "",
+},
+
+];

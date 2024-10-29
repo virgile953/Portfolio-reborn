@@ -15,7 +15,11 @@ export async function generateMetadata({ params }: { params: Params }) {
 	const projectId = resolvedParams.projectName;
 	const project = portfolioProjects.find((project) => project.id === projectId);
 
-	if (!project) return { title: "Not Found" };
+	if (!project)
+	{
+		title: "Not Found";
+		notFound();
+	};
 
 	return {
 		title: `Project ${project.heading}`,

@@ -3,6 +3,7 @@ import { Navbar } from "./components/ui/Navbar";
 import HeroSection from "./components/HeroSection";
 import Skills from "./components/Skills";
 import Projects from "./components/Projects";
+import Footer from "./components/Footer";
 
 export default function Home() {
   return (
@@ -12,9 +13,7 @@ export default function Home() {
         <HeroSection />
         <Skills />
         <Projects />
-        {/* <Skills />
-        <ProjectsSection />
-        <Footer /> */}
+        <Footer />
       </div>
     </main>
   );
