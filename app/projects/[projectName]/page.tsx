@@ -17,7 +17,6 @@ export async function generateMetadata({ params }: { params: Params }) {
 
 	if (!project)
 	{
-		title: "Not Found";
 		notFound();
 	};
 

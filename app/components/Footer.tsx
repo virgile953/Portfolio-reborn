@@ -4,9 +4,6 @@ import React from "react";
 import { portfolioProjects } from "../lib/constants";
 import Image from "next/image";
 
-
-const words = "Advanced Development & Data Engineering Solutions";
-
 const Footer = () => {
 	return (
 		<>
@@ -34,9 +31,10 @@ const Footer = () => {
 
 			<ul className="space-y-2.5 relative z-10 text-sm sm:text-base p-6">
 			  <li className="text-lg font-semibold">Projects</li>
-				{portfolioProjects.slice(0, 4).map((project) => (
-		  	 <li className="text-dark-200/60 hover:text-dark-200 dark:text-white/50 dark:hover:text-white">
+				{portfolioProjects.slice(0, 4).map((project, key) => (
+		  	 <li key={key} className="text-dark-200/60 hover:text-dark-200 dark:text-white/50 dark:hover:text-white">
 				<Link
+				key={key}
 					href={"/projects/" + project.id}
 					target="_blank"
 				>
