@@ -7,9 +7,10 @@ import { Code, Globe } from "lucide-react";
 import TechStack from "../components/TechStack";
 import Button from "../components/ui/Button";
 
+type Params = Promise<{ projectName: string }>
 
 // Make generateMetadata asynchronous to handle dynamic route params
-export async function generateMetadata({ params }: { params: { projectName: string } }) {
+export async function generateMetadata({ params }: { params: Params }) {
 	const settings = await params;
 	const projectId = settings.projectName;
 	const project = portfolioProjects.find((project) => project.id === projectId);
@@ -21,7 +22,7 @@ export async function generateMetadata({ params }: { params: { projectName: stri
 	};
 }
 
-const ProjectOverview = async ({ params }: { params: { projectName: string } }) => {
+async function ProjectOverview({ params }: { params: Params }) {
 	// Await `params` to ensure it’s ready
 	const settings = await params;
 	const projectId = settings.projectName;

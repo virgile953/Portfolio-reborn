@@ -24,7 +24,8 @@ export async function generateMetadata({ params }: { params: Params }) {
 
 async function ProjectOverview({ params }: { params: Params }) {
 	// Await `params` to ensure it’s ready
-	const projectId = (await params).projectName;
+	const resolvedParams = await params;
+	const projectId = resolvedParams.projectName;
 	const project = portfolioProjects.find((project) => project.id === projectId);
 
 	if (!project) return notFound();
@@ -57,7 +58,7 @@ async function ProjectOverview({ params }: { params: Params }) {
 				<br />
 				<TextGenerateEffect
 					words={subheading}
-					className="text-[32px] md:text-6xl lg:text-7xl font-light text-center max-w-5xl leading-snug tracking-wide"
+					className="text-[32px] md:text-5xl lg:text-6xl font-light text-center max-w-5xl leading-snug tracking-wide"
 				/>
 				</h1>
 
@@ -95,4 +96,5 @@ async function ProjectOverview({ params }: { params: Params }) {
 		</main>
 	);
 };
+
 export default ProjectOverview;
