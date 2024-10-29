@@ -3,16 +3,16 @@ import { portfolioProjects } from "../../lib/constants";
 import { Navbar } from "../../components/ui/Navbar";
 import Link from "next/link";
 import { Code, Globe } from "lucide-react";
-// import Image from "next/image";
 import TechStack from "../../components/TechStack";
 import Button from "../../components/ui/Button";
 import { TextGenerateEffect } from "@/app/components/ui/TextGenerate";
 
+type Params = Promise<{ projectName: string }>
 
-// Make generateMetadata asynchronous to handle dynamic route params
-export async function generateMetadata({ params }: { params: { projectName: string } }) {
-	const settings = await params;
-	const projectId = settings.projectName;
+export async function generateMetadata({ params }: { params: Params }) {
+	const resolvedParams = await params;
+
+	const projectId = resolvedParams.projectName;
 	const project = portfolioProjects.find((project) => project.id === projectId);
 
 	if (!project) return { title: "Not Found" };
@@ -22,10 +22,9 @@ export async function generateMetadata({ params }: { params: { projectName: stri
 	};
 }
 
-const ProjectOverview = async ({ params }: { params: { projectName: string } }) => {
+async function ProjectOverview({ params }: { params: Params }) {
 	// Await `params` to ensure it’s ready
-	const settings = await params;
-	const projectId = settings.projectName;
+	const projectId = (await params).projectName;
 	const project = portfolioProjects.find((project) => project.id === projectId);
 
 	if (!project) return notFound();
@@ -34,13 +33,12 @@ const ProjectOverview = async ({ params }: { params: { projectName: string } }) 
 		heading,
 		subheading,
 		description,
-		// imageUrl,
 		techStack,
 		liveDemoUrl,
 		sourceCodeUrl,
-	  } = project;
+	} = project;
 
-	  return (
+	return (
 		<main className="flex flex-col px-5 sm:px-10 relative">
 		  <div className="max-w-7xl mx-auto w-full">
 			<Navbar redirectionType="global" animate={false} />
@@ -52,32 +50,16 @@ const ProjectOverview = async ({ params }: { params: { projectName: string } }) 
 
 			  <div className="relative z-10">
 				<h1 className="text-[40px] md:text-6xl lg:text-7xl text-center max-w-5xl leading-normal tracking-wide uppercase mx-auto">
-				{/* <span className="font-black">{heading}</span> */}
 				<TextGenerateEffect
 					words={heading}
 					className="text-[40px] md:text-6xl lg:text-7xl font-bold text-center max-w-5xl leading-snug tracking-wide"
-					/>
+				/>
 				<br />
 				<TextGenerateEffect
-				words={subheading}
-				className="text-[32px] md:text-6xl lg:text-7xl font-light text-center max-w-5xl leading-snug tracking-wide"
+					words={subheading}
+					className="text-[32px] md:text-6xl lg:text-7xl font-light text-center max-w-5xl leading-snug tracking-wide"
 				/>
 				</h1>
-
-				{/* <div className="flex items-center justify-center my-24">
-				  <Link href="#image">
-					<MoveDown className="size-16" strokeWidth={1} />
-				  </Link>
-				</div> */}
-
-				{/* <div className="rounded-lg overflow-hidden" id="image">
-				  <Image
-					src={imageUrl}
-					width={2000}
-					height={1000}
-					alt="portfolio"
-				  />
-				</div> */}
 
 				<div className="mt-8 mb-32 flex flex-col md:flex-row gap-10 md:gap-5 justify-between">
 				  <div className="flex-1">
@@ -103,18 +85,14 @@ const ProjectOverview = async ({ params }: { params: { projectName: string } }) 
 						</Button>
 					)}
 					</div>
+				  </div>
 
-				</div>
-
-				<p className="flex-1 text-justify whitespace-pre-line">{description}</p>
+				  <p className="flex-1 text-justify whitespace-pre-line">{description}</p>
 				</div>
 			  </div>
 			</div>
-
-			{/* <Footer /> */}
 		  </div>
 		</main>
-	  );
+	);
 };
-
 export default ProjectOverview;
