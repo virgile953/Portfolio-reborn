@@ -1,10 +1,10 @@
 import { notFound } from "next/navigation";
 import { portfolioProjects } from "../../lib/constants";
-import { Navbar } from "../../components/ui/Navbar";
+import { Navbar } from "@/app/components/ui/Navbar";
 import Link from "next/link";
 import { Code, Globe } from "lucide-react";
-import TechStack from "../../components/TechStack";
-import Button from "../../components/ui/Button";
+import TechStack from "@/app/components/TechStack";
+import Button from "@/app/components/ui/Button";
 import { TextGenerateEffect } from "@/app/components/ui/TextGenerate";
 
 type Params = Promise<{ projectName: string }>

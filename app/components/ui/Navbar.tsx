@@ -3,7 +3,8 @@ import { BriefcaseBusiness,
 	House,
 	UserRound,
 	Contact as ContactIco,
-	Moon
+	Moon,
+	Sun
 	} from "lucide-react";
 import { cn } from "../../lib/utils"
 import {
@@ -15,6 +16,7 @@ import {
 import Link from "next/link";
 import React from "react";
 import { useState } from "react";
+import { useTheme } from "next-themes";
 
 type navItem = {
 	name: string;
@@ -33,7 +35,7 @@ let useAnimation: boolean = true;
 
 export const Navbar = ({redirectionType, animate} : {redirectionType?: "local" | "global", animate?: boolean}) => {
 	const { scrollYProgress } = useScroll();
-
+	const theme = useTheme();
 	if (animate == false)
 		useAnimation = false;
 	else
@@ -100,21 +102,21 @@ export const Navbar = ({redirectionType, animate} : {redirectionType?: "local" |
 				</Link>
 
 			))}
-			<button className="self-start relative z-10 inline-flex gap-2.5 h-12 items-center justify-center
-					rounded-md border border-dark-700
-					px-4 font-medium text-sm sm:text-base
-					text-slate-200 transition-colors
-					hover:bg-slate-800"
+			<button className="relative z-10 inline-flex gap-2.5 h-10 items-center justify-center
+								rounded-md border border-dark-700
+								px-4 ml-auto
+								font-medium text-sm sm:text-base
+								text-slate-200 transition-colors
+								hover:bg-slate-800"
 				onClick={() => {
-					if (localStorage.getItem("theme") == "light")
-						localStorage.setItem("theme", "dark")
+					if (theme.theme == "light")
+						theme.setTheme("dark")
 					else
-						localStorage.setItem("theme", "light")
+						theme.setTheme("light")
 
 				}}
 				>
-				<span className="block sm:hidden"><Moon /></span>
-				<span className="hidden sm:block font-medium"><Moon /></span>
+				<span className="block font-medium">{theme.theme == "light" ? <Moon /> : <Sun />}</span>
 			</button>
 			</motion.div>
 			</AnimatePresence>

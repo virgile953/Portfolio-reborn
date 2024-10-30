@@ -1,12 +1,16 @@
-import { ChevronRight, Download } from "lucide-react";
+"use client";
+import { ChevronRight } from "lucide-react";
 import ShinyButton from "./ui/Button";
 import Link from "next/link";
 import { TextGenerateEffect } from "./ui/TextGenerate";
 import React from "react";
+import Image from "next/image";
+import { useTheme } from "next-themes";
 
 const words = "Advanced Development & Data Engineering Solutions";
 
 const HeroSection = () => {
+  const theme = useTheme();
   return (
     <>
       <div className="flex items-center h-screen w-full dark:bg-dark-100 bg-white dark:bg-grid-white/[0.04] bg-grid-black/[0.06]
@@ -42,16 +46,27 @@ const HeroSection = () => {
             <ShinyButton icon={<ChevronRight />}>
               <Link href="#work">See My Work</Link>
             </ShinyButton>
-            <a
-              href="/resume/CV_VBA-en.pdf"
-              download
+            <div
+              // download
               className="flex items-center gap-2.5 group"
             >
-              <Download className="text-primary hover:text-primary/80" />
-              <span className="group-hover:text-black/70 dark:group-hover:text-white/70 transition-colors duration-200 font-semibold">
-                Download CV
+              {/* <Download className="text-primary hover:text-primary/80 "/> */}
+              <span className="ml-8 font-semibold flex flex-row">
+                Download CV:
+                {/* if theme is light theme then download light themed cv (duh) */}
+                <a className="ml-3 w-7 h-7 -translate-y-1 transition-transform duration-200 transform hover:scale-125"
+                   download
+                   href={ theme.theme == "light" ? "/resume/CV_VBA-fr-light.pdf" : "/resume/CV_VBA-fr-dark.pdf"}>
+                  <Image alt="FR flag" src="/imgs/fr.svg" width={24} height={16}/>
+                </a>
+                <a className="ml-4 w-7 h-7 -translate-y-1 transition-transform duration-200 transform hover:scale-125"
+                   download
+                   href={theme.theme == "light" ? "/resume/CV_VBA-en-light.pdf" : "/resume/CV_VBA-en-dark.pdf"}>
+                  <Image
+                    alt="UK flag" src="/imgs/uk.svg" width={24} height={16}/>
+                </a>
               </span>
-            </a>
+            </div>
           </div>
         </div>
       </div>
