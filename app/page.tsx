@@ -4,6 +4,7 @@ import HeroSection from "./components/HeroSection";
 import Skills from "./components/Skills";
 import Projects from "./components/Projects";
 import Footer from "./components/Footer";
+import { BackToTop } from "./components/ui/BackToTop";
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
         <Skills />
         <Projects />
         <Footer />
+        <BackToTop />
       </div>
     </main>
   );

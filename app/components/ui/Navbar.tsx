@@ -73,18 +73,15 @@ export const Navbar = ({redirectionType, animate} : {redirectionType?: "local" |
 		<motion.div
 			// initial={{ opacity: 1, y: 0 }}
 			initial={{
-			opacity: 1,
-			y: -100,
+				opacity: 1,
+				y: -100,
 			}}
-
-			// animate={{ opacity: 1, y: 0 }}
 			animate={{
-			y: visible ? 0 : -100,
-			opacity: visible ? 1 : 0,
+				y: visible ? 0 : -100,
+				opacity: visible ? 1 : 0,
 			}}
-
 			transition={{
-			duration: 0.2,
+				duration: 0.2,
 			}}
 			className="flex max-w-fit fixed top-10 inset-x-0 mx-auto border border-dark-700 rounded-lg bg-dark-200
 			 z-[5000] px-8 py-4 items-center justify-center space-x-4"
