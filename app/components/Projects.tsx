@@ -3,14 +3,7 @@ import Link from "next/link";
 import { portfolioProjects } from "../lib/constants";
 import ProjectCard from "./ProjectCard";
 import Button from "./ui/Button";
-import { ChevronRight, Github } from "lucide-react";
-import { BriefcaseBusiness,
-	House,
-	UserRound,
-	Contact as ContactIco,
-	Moon,
-	Sun
-	} from "lucide-react";
+import { ChevronRight,  } from "lucide-react";
 
 const ProjectsSection = () => {
 	return (

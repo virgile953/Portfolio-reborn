@@ -4,14 +4,11 @@ import { portfolioProjects } from "../lib/constants";
 import ProjectCard from "../components/ProjectCard";
 import {
 	BriefcaseBusiness,
-	ChevronLeft,
 	House,
 	UserRound,
 	Contact as ContactIco,
 } from "lucide-react";
 import { Navbar } from "../components/ui/Navbar";
-import { useRouter } from "next/navigation";
-import { TextGenerateEffect } from "../components/ui/TextGenerate";
 import Footer from "../components/Footer";
 
 const navItems = [
@@ -22,7 +19,6 @@ const navItems = [
 ];
 
 const ProjectsPage = () => {
-	const router = useRouter();
 	return (
 		<div className="max-w-7xl px-5 sm:px-10 mx-auto w-full">
 			<Navbar items={navItems} redirectionType="global" animate={false} />
