@@ -89,7 +89,7 @@ export const portfolioProjects = [
   {
     id: "Portfolio_website",
     heading: "Portfolio Website",
-    subheading: "A First portfolio website",
+    subheading: "Making a first portfolio website",
     description:
       `A modern portfolio website with all the info it needs to convey. It includes features automatic theme detection from system, a color changer, settings memorization and database fetching for all the projects's data. The website is developed with NextJs & typescript for the frontend parts, and Vercel & PostgresDB for the backend.
 
@@ -127,13 +127,15 @@ export const portfolioProjects = [
   {
     id: "Winflotte",
     heading: "Winflotte modernization",
-    subheading: "Modernization of the legacy Winflotte application",
+    subheading: "Modernizing and migrating the legacy Winflotte application",
     description:
-      `The Winflotte project was a complete redesign of a legacy SAS application used by fleet managers to streamline operations and data management. Aiming to enhance both user experience and performance, this project introduced a more intuitive interface, improved data visualization, and integrated advanced analytics features.
+      `This project was a complete redesign of the legacy SaaS application used by fleet managers to streamline operations and data management. Aiming to enhance both user experience and performance, this project introduced a more intuitive interface, improved data visualization, and integrated advanced analytics features.
 
-      Key updates included moving portions of the legacy Windows-based program to a web-based API application, optimizing backend processes in C#, and enhancing frontend interfaces with Angular and TypeScript. Performance was further optimized with Microsoft SQL Server and RabbitMQ for efficient data handling and logging.
+      Key updates included moving portions of the legacy citrix-served Windows program to a web-based API application, a complete rewrite and optimization of backend processes in C#, and enhancing frontend interfaces with Angular and TypeScript. Performance was further optimized by replacing HFSQL (PCSoft) with Microsoft SQL Server and RabbitMQ for more efficient data storage and logging.
 
-      The redesign significantly boosted user satisfaction, reduced onboarding time for new users, and greatly enhanced overall efficiency for fleet management teams.`,
+      This migration allowed us to add features that weren't initially thought of in the first design of the application, like a special table for logging, Oauth, automatic in/outgoing interfaces for various data and more.
+
+      The redesign significantly increased the responsiveness of the application, boosting user satisfaction and experience, reduced onboarding time for new users, and greatly enhanced overall efficiency for fleet management teams.`,
     imageUrl: "/imgs/projects/Winflotte.svg",
     techStack: [
       "TypeScript",
@@ -143,6 +145,7 @@ export const portfolioProjects = [
       "Microsoft SQL Server",
       "HFSQL",
       "PowerBI",
+      "RabbitMQ",
     ],
     liveDemoUrl: "",
     sourceCodeUrl: "",
@@ -155,7 +158,8 @@ export const portfolioProjects = [
     `This project was for the developpement of an automated solution for processing Electronic Data Interchange (EDI) files, optimizing business operations and minimizing manual data handling. Key features include mailbox reading based on SQL settings, automated EDI file parsing, customizable data mapping, and integration with existing business systems. Additionally, it provides real-time reporting, error handling, and an interface for configuration and monitoring.
 
     Using technologies such as C# for core logic, Angular/TypeScript for the user interface, SQL Server for data storage, and PowerShell scripts executed by Windows Scheduler, the solution has enabled significant time savings, and improved data accuracy and efficiency for the EDI process.`,
-  imageUrl: "/imgs/projects/portfolioEmail.svg",
+  imageUrl: "/imgs/projects/portfolioEDI.svg",
+  // imageUrl: "/imgs/projects/portfolioEmail.svg",
   techStack: [
     "C#",
     "RabbitMQ",
@@ -198,45 +202,25 @@ export const portfolioProjects = [
   sourceCodeUrl: "",
 },
 {
-  id: "OptiXt_SaaS",
-  heading: "SaaS Application migration",
-  subheading: "Migrating the monolith Windev application to a C# and Angular microservices architecture",
+  id: "OptiXt_Email",
+  heading: "Bulk Email sending  and parsing Tool",
+  subheading: "Facilitating bulk email sending",
   description:
-    "Led Angular development to fully redesign the SaaS application, improving user experience and performance.",
-  imageUrl: "/imgs/projects/portfolioSaaS.svg", // You'll need to add this image
-  techStack: ["Angular",
-      "TypeScript",
-      "C#",
-      "Windev",
-      "Webdev",
-      "HFSQL",
-      "SQL Server",
-      "PowerBI"],
+    `Created a tool for bulk email sending, with automatic HTML processing for personalized email to the recipient.
+
+    The tool was written in Python, because i never had a project need it and needed to chose which technology to use to write it.
+
+    It used an excel file as input, and chose from the column names which field goes where in the html.
+    The program needed to be operated by internal end-users, so being easy to use was a must. All they needed to do was write a basic email, and place in brackets some fields like "first name", "last name", "address", and they were replaced by the data in the Excel file for each line.
+    It also supported attachments, with their path being defined in the excel file as "attach.1", "attach.2", etc... to be able to send to each driver a list of the different costs they generated and to which client to imput them.
+
+    This reduced the time needed to complete certain client-agreed tasks from days to minutes, and allowed internal teams to sell a new kind of service in which we weren't competitive before.
+    `,
+  imageUrl: "/imgs/projects/portfolioPython.svg",
+  techStack: ["Python", "OpenPyxl", "Microsoft Excel"], // Potentially more
   liveDemoUrl: "",
   sourceCodeUrl: "",
 },
-// {
-//   id: "OptiXt_EDI",
-//   heading: "Automated EDI File Processing Software",
-//   subheading: "Streamlining EDI transactions through automation",
-//   description:
-//     "Developed software for automated EDI file processing and report generation.",
-//   imageUrl: "/imgs/projects/edi.svg", // You'll need to add this image
-//   techStack: ["C#", "PowerShell", "SQL Server"], // Potentially more
-//   liveDemoUrl: "",
-//   sourceCodeUrl: "",
-// },
-// {
-//   id: "OptiXt_Email",
-//   heading: "Bulk Email Processing Tools",
-//   subheading: "Facilitating bulk email sending and processing",
-//   description:
-//     "Created tools for bulk email sending and processing, automating communication workflows.",
-//   imageUrl: "/imgs/projects/email.svg", // You'll need to add this image
-//   techStack: ["C#", "PowerShell"], // Potentially more
-//   liveDemoUrl: "",
-//   sourceCodeUrl: "",
-// },
 // {
 //   id: "OptiXt_PowerShell",
 //   heading: "PowerShell Scripting for Automation",
