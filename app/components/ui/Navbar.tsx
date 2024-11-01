@@ -33,7 +33,7 @@ const navItems = [
 
 let useAnimation: boolean = true;
 
-export const Navbar = ({redirectionType, animate} : {redirectionType?: "local" | "global", animate?: boolean}) => {
+export const Navbar = ({redirectionType, animate, items = navItems} : {redirectionType?: "local" | "global", animate?: boolean, items?: navItem[]}) => {
 	const { scrollYProgress } = useScroll();
 	const theme = useTheme();
 	if (animate == false)
@@ -43,7 +43,7 @@ export const Navbar = ({redirectionType, animate} : {redirectionType?: "local" |
 
 	if (redirectionType && redirectionType === "global")
 	{
-		navItems.forEach(item => {
+		items.forEach(item => {
 			if (!item.link.startsWith("/"))
 				item.link = "/" + item.link;
 		})
@@ -86,7 +86,7 @@ export const Navbar = ({redirectionType, animate} : {redirectionType?: "local" |
 			className="flex max-w-fit fixed top-10 inset-x-0 mx-auto border border-dark-700 rounded-lg bg-dark-200
 			 z-[5000] px-8 py-4 items-center justify-center space-x-4"
 			>
-			{navItems.map((navItem: navItem, idx: number) => (
+			{items.map((navItem: navItem, idx: number) => (
 				<Link
 				key={`link=${idx}`}
 				href={navItem.link}
