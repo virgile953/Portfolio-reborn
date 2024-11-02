@@ -2,8 +2,6 @@
 import React, { useEffect, useRef } from "react";
 import * as THREE from "three";
 import { FBXLoader } from "three/addons/loaders/FBXLoader.js";
-import { TDSLoader } from "three/addons/loaders/TDSLoader.js";
-import { TrackballControls } from 'three/addons/controls/TrackballControls.js';
 
 type Model = {
 	name: string;
@@ -11,10 +9,6 @@ type Model = {
 	bgColor: string;
 	texturePath: string | { color: string; normal: string };
 };
-
-
-let container, controls;
-let camera, scene, renderer;
 
 const ModelDisplay: React.FC<{ model: Model }> = ({ model }) => {
 	const mountRef = useRef<HTMLDivElement>(null);
