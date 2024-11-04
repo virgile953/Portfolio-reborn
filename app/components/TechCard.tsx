@@ -30,12 +30,11 @@ const TechCard = ({
 			whileInView={{ opacity: 1, y: 0 }}
 			viewport={{ once: true }}
 			transition={{ duration: 0.5, delay: 0.25 }}
-			className="flex flex-col sm:flex-row items-center gap-6 p-4 rounded-lg border-2
+			className="flex flex-row items-center gap-6 p-4 rounded-lg border-2
 				bg-gray-100 border-gray-100 hover:bg-gray-50 hover:border-gray-100
 				dark:bg-dark-200 dark:border-dark-200 dark:hover:bg-dark-300 dark:hover:border-dark-700
 				transition-colors duration-200"
 		>
-			{/* Image container */}
 			<div
 				className={`p-3 ${bgColor} rounded-lg flex items-center justify-center w-[80px] h-[80px]`}
 			>

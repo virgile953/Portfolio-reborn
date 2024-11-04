@@ -25,7 +25,7 @@ const Skills = () => {
           className="text-sm min-[430px]:text-base max-w-lg md:max-w-3xl text-dark-200/70 dark:text-stone-200/70"
         >
           I&apos;m proficient in a range of modern technologies that help me
-          build highly functional solutions. These are some of my main technologies :
+          build highly functional solutions. <br /> Here are some of my main technologies :
         </motion.p>
       </div>
 

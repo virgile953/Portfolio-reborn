@@ -3,12 +3,7 @@ import Link from "next/link";
 import React from "react";
 import { portfolioProjects } from "../lib/constants";
 import Image from "next/image";
-import {
-	AtSign,
-	CornerDownRight,
-	MapPin,
-	Phone,
-} from "lucide-react";
+import { AtSign, CornerDownRight, MapPin, Phone } from "lucide-react";
 
 const Footer = () => {
 	return (
@@ -21,6 +16,18 @@ const Footer = () => {
 					<ul className="space-y-2.5 relative z-10 text-sm sm:text-base p-6 ">
 						<li className="text-base sm:text-lg font-semibold">Concact</li>
 						<li className="text-dark-200/75 hover:text-dark-200 dark:text-white/50 dark:hover:text-white flex items-center gap-1">
+							<AtSign />
+							<a href="mailto:Virgile.barbera@gmail.com" target="_blank">
+								<span>virgile.barbera@gmail.com</span>
+							</a>
+						</li>
+						<li className="text-dark-200/75 hover:text-dark-200 dark:text-white/50 dark:hover:text-white flex items-center gap-1">
+							<Phone />{" "}
+							<a href="tel:+33695239433" target="_blank">
+								{"(+33 ) 6 95 23 94 33"}
+							</a>
+						</li>{" "}
+						<li className="text-dark-200/75 hover:text-dark-200 dark:text-white/50 dark:hover:text-white flex items-center gap-1">
 							<MapPin />
 							<span>
 								15 rue d&apos;Ermont, <br />
@@ -28,18 +35,6 @@ const Footer = () => {
 								<br />
 								Val d&apos;Oise{" "}
 							</span>
-						</li>
-						<li className="text-dark-200/75 hover:text-dark-200 dark:text-white/50 dark:hover:text-white flex items-center gap-1">
-							<Phone />{" "}
-							<a href="tel:+33695239433" target="_blank">
-								{"(+33 ) 6 95 23 94 33"}
-							</a>
-						</li>
-						<li className="text-dark-200/75 hover:text-dark-200 dark:text-white/50 dark:hover:text-white flex items-center gap-1">
-							<AtSign />
-							<a href="mailto:Virgile.barbera@gmail.com" target="_blank">
-								<span>virgile.barbera@gmail.com</span>
-							</a>
 						</li>
 					</ul>
 
