@@ -6,25 +6,15 @@ import { portfolioProjects } from "../lib/constants";
 import Image from "next/image";
 import { AtSign, CornerDownRight, MapPin, Phone } from "lucide-react";
 
+const handleClick = () => {
+	const body = document.body;
+	body.classList.add("rotate-animation");
+	setTimeout(() => {
+		body.classList.remove("rotate-animation");
+	}, 4000);
+};
+
 const Footer = () => {
-	const handleClick = () => {
-		const oldPosition = window.scrollY;
-
-		const body = document.body;
-		body.classList.add("rotate-animation");
-		window.scrollTo({
-			top: document.documentElement.scrollHeight / 2,
-			behavior: "smooth",
-		});
-		setTimeout(() => {
-			body.classList.remove("rotate-animation");
-			window.scrollTo({
-				top: oldPosition,
-				behavior: "smooth",
-			});
-		}, 4000);
-	};
-
 	return (
 		<>
 			<div
