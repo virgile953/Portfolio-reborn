@@ -1,3 +1,4 @@
+"use client";
 import { Tooltip } from "@nextui-org/tooltip";
 import Link from "next/link";
 import React from "react";
@@ -6,6 +7,13 @@ import Image from "next/image";
 import { AtSign, CornerDownRight, MapPin, Phone } from "lucide-react";
 
 const Footer = () => {
+	const handlePrimaryColorChange = () => {
+		const col = document.documentElement.style.getPropertyValue("--primary-color");
+		if (col == "#A020F0")
+			document.documentElement.style.setProperty("--primary-color", "#36E236"); // Purple color
+		else
+			document.documentElement.style.setProperty("--primary-color", "#A020F0"); // Purple color
+	  };
 	return (
 		<>
 			<div
@@ -129,7 +137,7 @@ const Footer = () => {
 				</div>
 				<footer className="py-6 text-center text-dark-200 dark:text-stone-200">
 					&copy; {new Date().getFullYear()} Virgile Barbera
-					<br /> All rights reserved.
+					<br /> All rights <button onClick={handlePrimaryColorChange} className="cursor-default">reserved</button>.
 				</footer>
 			</div>
 		</>

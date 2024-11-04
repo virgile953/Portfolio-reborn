@@ -18,7 +18,8 @@ const config: Config = {
     extend: {
       colors: {
         primary: {
-          DEFAULT: "#36E236",
+          // DEFAULT: "#36E236",
+          DEFAULT: "var(--primary-color, #36E236)", // Default green color
         },
         dark: {
           100: "#0a0a0a",
@@ -78,6 +79,7 @@ function addVariablesForColors({ addBase, theme }: any) {
 
   addBase({
     ":root": newVars,
+    "--primary-color": "#36E236", // Initial primary color
   });
 }
 
