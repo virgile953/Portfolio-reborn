@@ -1,7 +1,6 @@
 import { notFound } from "next/navigation";
 import { portfolioProjects } from "../../lib/constants";
 import { Navbar } from "@/app/components/ui/Navbar";
-import Link from "next/link";
 import { Code, Globe } from "lucide-react";
 import TechStack from "@/app/components/TechStack";
 import Button from "@/app/components/ui/Button";
