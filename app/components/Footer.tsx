@@ -7,13 +7,24 @@ import Image from "next/image";
 import { AtSign, CornerDownRight, MapPin, Phone } from "lucide-react";
 
 const Footer = () => {
-	const handlePrimaryColorChange = () => {
-		const col = document.documentElement.style.getPropertyValue("--primary-color");
-		if (col == "#A020F0")
-			document.documentElement.style.setProperty("--primary-color", "#36E236"); // Purple color
-		else
-			document.documentElement.style.setProperty("--primary-color", "#A020F0"); // Purple color
-	  };
+	const handleClick = () => {
+		const oldPosition = window.scrollY;
+
+		const body = document.body;
+		body.classList.add("rotate-animation");
+		window.scrollTo({
+			top: document.documentElement.scrollHeight / 2,
+			behavior: "smooth",
+		});
+		setTimeout(() => {
+			body.classList.remove("rotate-animation");
+			window.scrollTo({
+				top: oldPosition,
+				behavior: "smooth",
+			});
+		}, 4000);
+	};
+
 	return (
 		<>
 			<div
@@ -137,7 +148,11 @@ const Footer = () => {
 				</div>
 				<footer className="py-6 text-center text-dark-200 dark:text-stone-200">
 					&copy; {new Date().getFullYear()} Virgile Barbera
-					<br /> All rights <button onClick={handlePrimaryColorChange} className="cursor-default">reserved</button>.
+					<br /> All rights{" "}
+					<button onClick={handleClick} className="cursor-default">
+						reserved
+					</button>
+					.
 				</footer>
 			</div>
 		</>
