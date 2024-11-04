@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { Raleway } from "next/font/google";
 import { ThemeProvider } from "./components/ui/ThemeProvider";
 import React from "react";
+import { Analytics } from "@vercel/analytics/react"
 
 const raleway = Raleway({ subsets: ["latin"] });
 
@@ -28,6 +29,7 @@ export default function RootLayout({
 					disableTransitionOnChange
 				>
 					{children}
+					<Analytics />
 				</ThemeProvider>
 			</body>
 		</html>
