@@ -92,7 +92,7 @@ export const portfolioProjects = [
 		subheading: "Making a first portfolio website",
 		description: `A modern portfolio website with all the info it needs to convey. It includes features automatic theme detection from system, a color changer, settings memorization and database fetching for all the projects's data. The website is developed with NextJs & typescript for the frontend parts, and Vercel & PostgresDB for the backend.
 
-      It has some shortcomings though, mainly it's looks, but it served well as a first "from scratch" project`,
+		It has some shortcomings though, mainly it's looks, but it served well as a first "from scratch" project`,
 		imageUrl: "/imgs/projects/portfolio.svg",
 		techStack: [
 			"TypeScript",
@@ -102,7 +102,7 @@ export const portfolioProjects = [
 			"Vercel",
 			"Bun",
 		],
-		liveDemoUrl: "https://vbarbera.com",
+		liveDemoUrl: "https://old.vbarbera.com",
 		sourceCodeUrl: "https://github.com/virgile953/portfolio",
 	},
 	{
@@ -110,10 +110,12 @@ export const portfolioProjects = [
 		heading: "Portfolio Redesign",
 		subheading: "A fresh, refined approach to showcasing my work",
 		description: `Building on the foundation of my first portfolio, I incorporated user feedback and my growing experience to create a polished redesign. This version emphasizes both form and function, with a visually pleasing and cohesive aesthetic powered by Tailwind CSS. Code structure and readability have also been significantly improved, making it easier to maintain and scale.
-    Designed with Next.js, the new portfolio is faster, cleaner, and fully optimized for a better user experience.`,
+
+
+		Designed with Next.js, the new portfolio is faster, cleaner, and fully optimized for a better user experience.`,
 		imageUrl: "/imgs/projects/portfolio_redesign.svg",
 		techStack: ["Typescript", "NextJS", "TailwindCSS", "Vercel", "Bun"],
-		liveDemoUrl: "https://portfolio-reborn.vercel.app",
+		liveDemoUrl: "https://vbarbera.com",
 		sourceCodeUrl: "https://github.com/virgile953/Portfolio-reborn",
 	},
 	{
@@ -149,7 +151,6 @@ export const portfolioProjects = [
 
     Using technologies such as C# for core logic, Angular/TypeScript for the user interface, SQL Server for data storage, and PowerShell scripts executed by Windows Scheduler, the solution has enabled significant time savings, and improved data accuracy and efficiency for the EDI process.`,
 		imageUrl: "/imgs/projects/portfolioEDI.svg",
-		// imageUrl: "/imgs/projects/portfolioEmail.svg",
 		techStack: [
 			"C#",
 			"RabbitMQ",
