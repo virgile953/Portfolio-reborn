@@ -13,11 +13,6 @@ const ProjectsSection = () => {
 					My portfolio
 				</h2>
 				<div className="gap-4">
-					{/* <Button icon={<ChevronRight />}>
-						<Link href="https://github.com/virgile953" target="_blank">
-							All Projects
-						</Link>
-					</Button> */}
 					<Button icon={<ChevronRight />}>
 						<Link href="/projects" target="">
 							All Projects

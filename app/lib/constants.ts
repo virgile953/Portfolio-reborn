@@ -81,7 +81,7 @@ export const techCardsItems = [
     description: "Data visualization software",
     imageUrl: "/imgs/logos/powerbi.svg",
     bgColor: "bg-[#FFCA28]/20",
-    progress: 3,
+    progress: 4,
   },
 ];
 
