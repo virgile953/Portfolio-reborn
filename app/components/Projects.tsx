@@ -1,9 +1,8 @@
 "use client";
-import Link from "next/link";
 import { portfolioProjects } from "../lib/constants";
 import ProjectCard from "./ProjectCard";
 import Button from "./ui/Button";
-import { ChevronRight,  } from "lucide-react";
+import { ChevronRight } from "lucide-react";
 
 const ProjectsSection = () => {
 	return (
@@ -13,10 +12,8 @@ const ProjectsSection = () => {
 					My portfolio
 				</h2>
 				<div className="gap-4">
-					<Button icon={<ChevronRight />}>
-						<Link href="/projects" target="">
-							All Projects
-						</Link>
+					<Button icon={<ChevronRight />} href="/projects">
+						All Projects
 					</Button>
 				</div>
 			</div>

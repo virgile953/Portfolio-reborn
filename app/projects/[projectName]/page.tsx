@@ -73,17 +73,13 @@ async function ProjectOverview({ params }: { params: Params }) {
 
 								<div className="flex items-center gap-4 mt-10">
 									{liveDemoUrl && (
-										<Button icon={<Globe />} iconPosition="left">
-											<Link href={liveDemoUrl} target="_blank">
+										<Button icon={<Globe />} iconPosition="left" href={liveDemoUrl}>
 												View Demo
-											</Link>
 										</Button>
 									)}
 									{sourceCodeUrl && (
-										<Button icon={<Code />} iconPosition="left">
-											<Link href={sourceCodeUrl} target="_blank">
+										<Button icon={<Code />} iconPosition="left" href={sourceCodeUrl}>
 												Source Code
-											</Link>
 										</Button>
 									)}
 								</div>
