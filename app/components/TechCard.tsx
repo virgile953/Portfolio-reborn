@@ -5,7 +5,7 @@ import ProgressBar from "./ui/ProgressBar";
 import { EyeIcon } from "lucide-react";
 import { motion, useInView } from "framer-motion";
 import Link from "next/link";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 
 const TechCard = ({
 	cardInfo,
@@ -22,6 +22,11 @@ const TechCard = ({
 	const { name, description, imageUrl, bgColor, progress, link } = cardInfo;
 	const ref = useRef(null);
 	const isVisible = useInView(ref, { once: true });
+	const [isRotating, setIsRotating] = useState(false);
+
+	const handleImageClick = () => {
+		setIsRotating((prev) => !prev);
+	};
 
 	return (
 		<motion.div
@@ -38,15 +43,26 @@ const TechCard = ({
 			<div
 				className={`p-3 ${bgColor} rounded-lg flex items-center justify-center w-[80px] h-[80px]`}
 			>
-				<Image
-					src={imageUrl}
-					width={40}
-					height={40}
-					alt={`${name} logo`}
-					className={`object-contain ${
-						imageUrl.toLowerCase().includes("nextjs") ? "dark:invert" : ""
-					} hover:scale-110 transition-transform duration-200`}
-				/>
+				<motion.div
+					onClick={handleImageClick}
+					animate={{
+						rotate: isRotating ? 360 : 0,
+					}}
+					transition={{
+						duration: 1,
+						ease: "backInOut",
+					}}
+				>
+					<Image
+						src={imageUrl}
+						width={40}
+						height={40}
+						alt={`${name} logo`}
+						className={`object-contain ${
+							imageUrl.toLowerCase().includes("nextjs") ? "dark:invert" : ""
+						} hover:scale-110 transition-transform duration-200`}
+					/>
+				</motion.div>
 			</div>
 
 			{/* Text and Progress Bar container */}
@@ -55,10 +71,14 @@ const TechCard = ({
 				<p className="text-dark-200/70 dark:text-white/70 text-sm">
 					{description}
 				</p>
-				<ProgressBar progress={progress} color={bgColor} startAnimation={isVisible} />
+				<ProgressBar
+					progress={progress}
+					color={bgColor}
+					startAnimation={isVisible}
+				/>
 			</div>
 
-			{/* Optional link icon, if a link is provided */}
+			{/* link icon, if link does exist */}
 			{link && (
 				<Link href={link} target="_blank" rel="noopener noreferrer">
 					<EyeIcon className="w-5 h-5 sm:w-6 sm:h-6 text-primary hover:text-primary/80 transition-colors duration-200" />

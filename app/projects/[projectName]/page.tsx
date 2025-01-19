@@ -1,3 +1,5 @@
+"use client";
+import React, { useState, useEffect } from "react";
 import { notFound } from "next/navigation";
 import { portfolioProjects } from "../../lib/constants";
 import { Navbar } from "@/app/components/ui/Navbar";
@@ -6,30 +8,35 @@ import TechStack from "@/app/components/TechStack";
 import Button from "@/app/components/ui/Button";
 import { TextGenerateEffect } from "@/app/components/ui/TextGenerate";
 
-type Params = Promise<{ projectName: string }>;
+const ProjectOverview = ({
+	params,
+}: {
+	params: Promise<{ projectName: string }>;
+}) => {
+	const [project, setProject] = useState<any>(null);
+	const [isLoading, setIsLoading] = useState(true);
+	const resolvedParams = React.use(params);
 
-export async function generateMetadata({ params }: { params: Params }) {
-	const resolvedParams = await params;
+	useEffect(() => {
+		const foundProject = portfolioProjects.find(
+			(p) => p.id.toLowerCase() === resolvedParams.projectName.toLowerCase()
+		);
 
-	const projectId = resolvedParams.projectName;
-	const project = portfolioProjects.find((project) => project.id === projectId);
+		if (!foundProject) {
+			notFound();
+		}
 
-	if (!project) {
-		notFound();
+		setProject(foundProject);
+		setIsLoading(false);
+	}, [resolvedParams.projectName]);
+
+	if (isLoading) {
+		return <div>Loading...</div>;
 	}
 
-	return {
-		title: `Project ${project.heading}`,
-	};
-}
-
-async function ProjectOverview({ params }: { params: Params }) {
-	// Await `params` to ensure it’s ready
-	const resolvedParams = await params;
-	const projectId = resolvedParams.projectName;
-	const project = portfolioProjects.find((project) => project.id === projectId);
-
-	if (!project) return notFound();
+	if (!project) {
+		return notFound();
+	}
 
 	const {
 		heading,
@@ -58,7 +65,7 @@ async function ProjectOverview({ params }: { params: Params }) {
 							/>
 							<br />
 							<p className="text-[32px] md:text-5xl lg:text-6xl font-light text-center max-w-5xl leading-snug tracking-wide">
-							{subheading}
+								{subheading}
 							</p>
 						</h1>
 
@@ -72,13 +79,21 @@ async function ProjectOverview({ params }: { params: Params }) {
 
 								<div className="flex items-center gap-4 mt-10">
 									{liveDemoUrl && (
-										<Button icon={<Globe />} iconPosition="left" href={liveDemoUrl}>
-												View Demo
+										<Button
+											icon={<Globe />}
+											iconPosition="left"
+											href={liveDemoUrl}
+										>
+											View Demo
 										</Button>
 									)}
 									{sourceCodeUrl && (
-										<Button icon={<Code />} iconPosition="left" href={sourceCodeUrl}>
-												Source Code
+										<Button
+											icon={<Code />}
+											iconPosition="left"
+											href={sourceCodeUrl}
+										>
+											Source Code
 										</Button>
 									)}
 								</div>
@@ -92,6 +107,6 @@ async function ProjectOverview({ params }: { params: Params }) {
 			</div>
 		</main>
 	);
-}
+};
 
 export default ProjectOverview;

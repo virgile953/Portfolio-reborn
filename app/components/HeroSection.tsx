@@ -50,72 +50,72 @@ const HeroSection = () => {
 								Download CV:
 								{/* if theme is light theme then download light themed cv (duh) */}
 								<a
-	className="ml-4 w-7 h-7 -translate-y-1 transition-transform duration-200 transform hover:scale-125"
-	download
-	href={
-		theme.theme == "light"
-			? "/resume/CV_VBA-fr-light.pdf"
-			: "/resume/CV_VBA-fr-dark.pdf"
-	}
->
-	{/* Apparently, some RH print PDFs but are, for ecological reasons, preferring PDFs that aren't all black */}
-	{theme.theme === "dark" ? (
-		<Tooltip
-			content="for lighter-colored PDF, use light mode"
-			showArrow={true}
-			color="secondary"
-			placement="bottom"
-			offset={15}
-		>
-			<Image
-				alt="FR flag"
-				src="/imgs/fr.svg"
-				width={24}
-				height={24}
-			/>
-		</Tooltip>
-	) : (
-		<Image
-			alt="FR flag"
-			src="/imgs/fr.svg"
-			width={24}
-			height={24}
-		/>
-	)}
-</a>
-<a
-	className="ml-4 w-7 h-7 -translate-y-1 transition-transform duration-200 transform hover:scale-125"
-	download
-	href={
-		theme.theme == "light"
-			? "/resume/CV_VBA-en-light.pdf"
-			: "/resume/CV_VBA-en-dark.pdf"
-	}
->
-	{theme.theme === "dark" ? (
-		<Tooltip
-			content="for lighter-colored PDF, use light mode"
-			showArrow={true}
-			color="secondary"
-			placement="bottom"
-			offset={15}
-		>
-			<Image
-				alt="UK flag"
-				src="/imgs/uk.svg"
-				width={24}
-				height={24}
-			/>
-		</Tooltip>
-	) : (
-		<Image
-			alt="UK flag"
-			src="/imgs/uk.svg"
-			width={24}
-			height={24}
-		/>
-	)}
-</a>
+									className="ml-4 w-7 h-7 -translate-y-1 transition-transform duration-200 transform hover:scale-125"
+									download
+									href={
+										theme.theme == "light"
+											? "/resume/CV_VBA-fr-light.pdf"
+											: "/resume/CV_VBA-fr-dark.pdf"
+									}
+								>
+									{/* Apparently, some RH print PDFs but are, for ecological reasons, preferring PDFs that aren't all black */}
+									{theme.theme === "dark" ? (
+										<Tooltip
+											content="for lighter-colored PDF, use light mode"
+											showArrow={true}
+											color="secondary"
+											placement="bottom"
+											offset={15}
+										>
+											<Image
+												alt="FR flag"
+												src="/imgs/fr.svg"
+												width={24}
+												height={24}
+											/>
+										</Tooltip>
+									) : (
+										<Image
+											alt="FR flag"
+											src="/imgs/fr.svg"
+											width={24}
+											height={24}
+										/>
+									)}
+								</a>
+								<a
+									className="ml-4 w-7 h-7 -translate-y-1 transition-transform duration-200 transform hover:scale-125"
+									download
+									href={
+										theme.theme == "light"
+											? "/resume/CV_VBA-en-light.pdf"
+											: "/resume/CV_VBA-en-dark.pdf"
+									}
+								>
+									{theme.theme === "dark" ? (
+										<Tooltip
+											content="for lighter-colored PDF, use light mode"
+											showArrow={true}
+											color="secondary"
+											placement="bottom"
+											offset={15}
+										>
+											<Image
+												alt="UK flag"
+												src="/imgs/uk.svg"
+												width={24}
+												height={24}
+											/>
+										</Tooltip>
+									) : (
+										<Image
+											alt="UK flag"
+											src="/imgs/uk.svg"
+											width={24}
+											height={24}
+										/>
+									)}
+								</a>
 							</span>
 						</div>
 					</div>

@@ -8,7 +8,7 @@ import {
 } from "framer-motion";
 import React, { useState } from "react";
 import { CircleArrowUp } from "lucide-react";
-
+import Button from "@/app/components/ui/Button";
 let useAnimation = true;
 
 export const BackToTop = ({ animate }: { animate?: boolean }) => {
@@ -49,7 +49,7 @@ export const BackToTop = ({ animate }: { animate?: boolean }) => {
 				}}
 				className="fixed bottom-10 right-10 z-[5000] rounded-md justify-center gap-2.5  px-2 py-2 border-2 transition-colors
 						border-dark-200 	 bg-white		hover:bg-gray-100
-						dark:border-gray-100 dark:bg-dark-200	dark:hover:bg-slate-800"
+						dark:border-gray-100 dark:bg-black	dark:hover:bg-slate-800"
 				onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
 				>
 					<CircleArrowUp className="h-8 w-8 text-dark-200 dark:text-white"/>

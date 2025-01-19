@@ -29,7 +29,7 @@ const ProjectCard = ({ project }: { project: ProjectProps }) => {
 			className="bg-[#F3F4F3] dark:bg-dark-200 rounded-lg p-4 sm:p-8 space-y-8"
 		>
 			<div className="flex flex-1 flex-col sm:flex-row items-center gap-6 overflow-auto">
-				<Link href={`/projects/${id}`} className="rounded-lg">
+				<Link prefetch={true} href={`/projects/${id}`} className="rounded-lg">
 					<Image
 						loading="lazy"
 						src={imageUrl}
@@ -48,6 +48,7 @@ const ProjectCard = ({ project }: { project: ProjectProps }) => {
 					<div className="flex flex-col sm:flex-row justify-between gap-5 flex-grow">
 						<TechStack techStack={techStack} />
 						<Link
+							prefetch={true}
 							href={`/projects/${id}`}
 							className="mb-0 p-3 bg-primary hover:bg-primary/80 transition-colors duration-200 rounded-lg self-end sm:self-end"
 						>

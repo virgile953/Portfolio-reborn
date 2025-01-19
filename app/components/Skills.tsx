@@ -31,14 +31,31 @@ const Skills = () => {
 			</div>
 
 			<motion.div
-				initial={{ opacity: 0, y: 75 }}
-				whileInView={{ opacity: 1, y: 0 }}
+				initial="hidden"
+				whileInView="visible"
 				viewport={{ once: true }}
-				transition={{ duration: 0.5, delay: 0.25 }}
+				variants={{
+					hidden: { opacity: 1 },
+					visible: {
+						opacity: 1,
+						transition: {
+							staggerChildren: 0.15,
+						},
+					},
+				}}
 				className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 items-center justify-between gap-4"
 			>
 				{techCardsItems.map((cardItem) => (
-					<TechCard key={cardItem.name} cardInfo={cardItem} />
+					<motion.div
+						key={cardItem.name}
+						variants={{
+							hidden: { opacity: 0, y: 75 },
+							visible: { opacity: 1, y: 0 },
+						}}
+						transition={{ duration: 0.5 }}
+					>
+						<TechCard cardInfo={cardItem} />
+					</motion.div>
 				))}
 			</motion.div>
 		</div>

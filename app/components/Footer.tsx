@@ -58,13 +58,14 @@ const Footer = () => {
 									key={key}
 									href={"/projects/" + project.id}
 									target="_blank"
+									prefetch={true}
 								>
 									{project.heading}
 								</Link>
 							</li>
 						))}
 						<li className="text-dark-200/75 hover:text-dark-200 dark:text-white/50 dark:hover:text-white flex items-center gap-1">
-							<Link href="/projects" className="flex items-center gap-1">
+							<Link prefetch={true} href="/projects" className="flex items-center gap-1">
 								<CornerDownRight />
 								See all
 							</Link>
@@ -85,6 +86,7 @@ const Footer = () => {
 									placement="left"
 								>
 									<Image
+										loading="lazy"
 										width={40}
 										height={40}
 										src={"/imgs/footer/linkedin.svg"}
@@ -103,6 +105,7 @@ const Footer = () => {
 									placement="left"
 								>
 									<Image
+										loading="lazy"
 										width={40}
 										height={40}
 										src={"/imgs/footer/github.svg"}
@@ -124,6 +127,7 @@ const Footer = () => {
 									placement="left"
 								>
 									<Image
+										loading="lazy"
 										width={40}
 										height={40}
 										src={"/imgs/footer/instagram.svg"}
