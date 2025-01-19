@@ -81,8 +81,9 @@ const ModelDisplay: React.FC<{ model: Model }> = ({ model }) => {
 
 		return () => {
 			renderer.dispose();
+			scene.clear();
 		};
-	}, [model.modelPath, model.texturePath]);
+	}, [model.modelPath, model.texturePath, loader]);
 
 	return <div ref={mountRef} />;
 };

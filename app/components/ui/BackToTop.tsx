@@ -8,7 +8,6 @@ import {
 } from "framer-motion";
 import React, { useState } from "react";
 import { CircleArrowUp } from "lucide-react";
-import Button from "@/app/components/ui/Button";
 let useAnimation = true;
 
 export const BackToTop = ({ animate }: { animate?: boolean }) => {

@@ -7,13 +7,14 @@ import { Code, Globe } from "lucide-react";
 import TechStack from "@/app/components/TechStack";
 import Button from "@/app/components/ui/Button";
 import { TextGenerateEffect } from "@/app/components/ui/TextGenerate";
+import { Project } from '@/app/types/project';
 
 const ProjectOverview = ({
 	params,
 }: {
 	params: Promise<{ projectName: string }>;
 }) => {
-	const [project, setProject] = useState<any>(null);
+	const [project, setProject] = useState<Project | null>(null);
 	const [isLoading, setIsLoading] = useState(true);
 	const resolvedParams = React.use(params);
 

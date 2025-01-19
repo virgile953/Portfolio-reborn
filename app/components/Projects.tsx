@@ -1,7 +1,6 @@
 "use client";
 import { portfolioProjects } from "../lib/constants";
 import ProjectCard from "./ProjectCard";
-import Button from "./ui/Button";
 import { ChevronRight } from "lucide-react";
 import Link from "next/link";
 
