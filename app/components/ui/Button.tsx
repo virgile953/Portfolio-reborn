@@ -17,6 +17,7 @@ const Button = ({
 }) => {
 	return (
 		<Link
+			target={href.startsWith("http") ? "_blank": ""}
 			href={href}
 			passHref
 			className={

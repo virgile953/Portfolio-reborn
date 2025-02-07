@@ -3,6 +3,7 @@ import { BriefcaseBusiness,
 	House,
 	UserRound,
 	Contact as ContactIco,
+	Wrench,
 	Moon,
 	Sun
 	} from "lucide-react";
@@ -28,6 +29,7 @@ const navItems = [
 	{ name: "Home", link: "#home", icon: <House /> },
 	{ name: "Work", link: "#work", icon: <BriefcaseBusiness /> },
 	{ name: "About", link: "#about", icon: <UserRound /> },
+	{ name: "Working on", link: "#now", icon: <Wrench /> },
 	{ name: "Contact", link: "#contact", icon: <ContactIco /> },
   ];
 

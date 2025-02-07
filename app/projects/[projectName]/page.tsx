@@ -7,7 +7,7 @@ import { Code, Globe } from "lucide-react";
 import TechStack from "@/app/components/TechStack";
 import Button from "@/app/components/ui/Button";
 import { TextGenerateEffect } from "@/app/components/ui/TextGenerate";
-import { Project } from '@/app/types/project';
+import { Project } from "@/app/types/project";
 
 const ProjectOverview = ({
 	params,
@@ -99,9 +99,10 @@ const ProjectOverview = ({
 									)}
 								</div>
 							</div>
-							<p className="flex-auto text-justify whitespace-pre-line">
-								{description}
-							</p>
+							<p
+								className="flex-auto text-justify whitespace-pre-line"
+								dangerouslySetInnerHTML={{ __html: description }}
+							/>
 						</div>
 					</div>
 				</div>

@@ -5,6 +5,7 @@ import Skills from "./components/Skills";
 import Projects from "./components/Projects";
 import Footer from "./components/Footer";
 import { BackToTop } from "./components/ui/BackToTop";
+import WorkingOn from "./components/WorkingOn";
 
 export default function Home() {
 	return (
@@ -14,6 +15,7 @@ export default function Home() {
 				<HeroSection />
 				<Skills />
 				<Projects />
+				<WorkingOn />
 				<Footer />
 				<BackToTop />
 			</div>
