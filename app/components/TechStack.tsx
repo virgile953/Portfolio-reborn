@@ -1,6 +1,6 @@
 const TechStack = ({ techStack }: { techStack: string[] }) => {
 	return (
-		<div className="flex flex-wrap items-center gap-2.5 max-w-sm">
+		<div className="flex flex-wrap items-center gap-2.5 ">
 			{techStack.map((tech) => (
 				<p
 					key={tech}
