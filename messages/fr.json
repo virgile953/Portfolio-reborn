@@ -1,0 +1,130 @@
+{
+	"Navbar": {
+		"Home": "Accueil",
+		"Work": "Travaux",
+		"About": "À propos",
+		"WorkingOn": "Actuellement",
+		"Contact": "Contact"
+	},
+	"Hero": {
+		"subtitle": "Je suis Virgile, un développeur spécialisé dans la création d'applications performantes à travers le développement bas niveau et l'ingénierie des données.",
+		"seeWork": "Voir mes projets",
+		"downloadCV": "Télécharger CV :",
+		"lighterPDF": "pour un PDF plus clair, utilisez le mode clair"
+	},
+	"Skills": {
+		"Current": "Technologies actuelles",
+		"Subtitle": "Je maîtrise un ensemble de technologies modernes qui m'aident à construire des solutions hautement fonctionnelles.",
+		"MainTechs": "Voici mes principales technologies :",
+		"description": "Tutoriel sur la manipulation de i18n basée sur le chemin ou le domaine avec Nextjs v15"
+	},
+	"Projects": {
+		"title": "Mon portfolio",
+		"allProjects": "Tous les projets",
+		"subtitle": "Voici quelques projets sur lesquels j'ai travaillé.",
+		"overview": "Aperçu du projet",
+		"viewDemo": "Voir la démo",
+		"sourceCode": "Code source",
+		"notFound": {
+			"title": "OOps, on dirait que je n'ai pas encore réalisé ce projet ¯\\_(ツ)_/¯",
+			"goHome": "Retour à l'accueil"
+		}
+	},
+	"WorkingOn": {
+		"title": "Ce sur quoi je travaille actuellement :",
+		"description": "Développement d'un <bold>site vitrine et e-commerce</bold>",
+		"idea": "J'ai eu l'idée de créer ce site pour Coach Vaillant lorsqu'il m'a parlé de sa marque de vêtements et de son besoin d'une plateforme pour présenter ses <bold>programmes de coaching</bold> et les <bold>avis clients</bold>, tout en servant de site <bold>e-commerce</bold> pour vendre ses vêtements.",
+		"requirements": "Ses exigences étaient très spécifiques, et je savais que je pouvais créer un <bold>design unique</bold> adapté à ses besoins.",
+		"mainPage": "La page principale est divisée en deux parties par défaut :",
+		"leftSide": "La <bold>partie gauche</bold> est dédiée aux programmes de coaching, mettant en avant son expertise sportive et les avis clients.",
+		"rightSide": "La <bold>partie droite</bold> est dédiée à la <bold>boutique en ligne</bold>.",
+		"divider": "La position du séparateur peut être ajustée par l'utilisateur, et son état est stocké dans le <bold>LocalStorage</bold> pour une récupération rapide lors de la prochaine visite.",
+		"adminPanel": "Le site comprend également un <bold>panel administrateur</bold>, accessible via <bold>authentification JWT</bold>, qui permet à l'administrateur de :",
+		"adminTasks": {
+			"createItems": "Créer de nouveaux articles, couleurs et collections",
+			"validateTestimonials": "Valider les témoignages clients pour la section coaching"
+		},
+		"techStack": "Le site est construit avec <bold>Next.js</bold> et <bold>Tailwind CSS</bold> pour le front-end, et utilise <bold>Supabase</bold> pour la base de données et <bold>Blob Store</bold> pour le stockage des images. Il s'intègre également avec des APIs externes, comme la récupération automatique de la <bold>photo de profil Instagram</bold> d'un client pour l'afficher à côté de son témoignage.",
+		"viewDemo": "Voir la démo"
+	},
+	"TechCards": {
+		"TypeScript": {
+			"description": "JavaScript en mieux"
+		},
+		"React": {
+			"description": "Bibliothèque JavaScript"
+		},
+		"NextJS": {
+			"description": "Framework React"
+		},
+		"Tailwind": {
+			"description": "Framework CSS"
+		},
+		"Git": {
+			"description": "Contrôle de version"
+		},
+		"Python": {
+			"description": "Langage de haut niveau"
+		},
+		"C": {
+			"description": "Langage de bas niveau"
+		},
+		"C#": {
+			"description": "Langage de moyen niveau"
+		},
+		"Postgres": {
+			"description": "Outil de base de données"
+		},
+		"MongoDB": {
+			"description": "Outil de base de données NoSQL"
+		},
+		"SQL": {
+			"description": "Langage de requête de base de données"
+		},
+		"Microsoft PowerBI": {
+			"description": "Logiciel de visualisation de données"
+		}
+	},
+	"PortfolioProjects": {
+		"Alert_acanthaster": {
+			"heading": "Alerte Acanthaster",
+			"subheading": "Création d'un site web pour un concours sur la vie marine",
+			"description": "Le site web <strong>Alerte Acanthaster</strong> a été créé dans le cadre d'un cours de développement que j'ai animé avec un groupe d'élèves de 5ème. Ensemble, nous avons conçu et construit une plateforme légère et intuitive visant à aider à préserver la vie marine en luttant contre la menace des espèces invasives d'Acanthaster (étoiles de mer couronne d'épines). Les élèves ont activement participé au projet, en proposant des idées, en donnant leur avis et en apprenant le développement web, tandis que je me chargeais de la mise en œuvre technique.\n\nLe site est conçu pour être facile à utiliser, ne nécessitant pas de création de compte pour les utilisateurs occasionnels. La page d'accueil présente une barre de navigation simple avec les options <em>\"Accueil\"</em>, <em>\"À propos\"</em>, <em>\"Connexion\"</em> et <em>\"Inscription\"</em>. Les fonctionnalités de connexion et d'inscription sont exclusivement réservées aux chercheurs et aux plongeurs professionnels qui ont besoin d'accéder à des données détaillées pour gérer les observations d'Acanthaster. L'authentification est gérée via des <strong>JWT</strong> stockés dans des cookies pour un accès sécurisé et fluide.\n\nPour les <strong>chercheurs</strong>, la plateforme offre des fonctionnalités avancées :\n<ul>\n  <li>Notifications personnalisables : Les chercheurs peuvent configurer des alertes pour être notifiés par e-mail, notifications push, ou les deux lorsqu'une observation est signalée près de leur localisation spécifiée (latitude et longitude).</li><li>Gestion des données : Un onglet <em>\"Données\"</em> dédié fournit un tableau complet de toutes les observations signalées, avec des options pour exporter les données et mettre à jour le statut des observations une fois qu'elles ont été traitées.</li></ul>\nPour les <strong>utilisateurs occasionnels</strong>, l'accent est mis sur la simplicité et la facilité d'utilisation :\n<ul>\n  <li>Carte interactive : Les utilisateurs peuvent visualiser une carte avec des marqueurs indiquant les observations d'Acanthaster signalées. Ils peuvent interagir avec les marqueurs en donnant un pouce vers le haut ou vers le bas pour confirmer l'exactitude des rapports.</li>  <li>Signalement d'observations : Les utilisateurs peuvent facilement signaler de nouvelles observations en cliquant sur la carte, ce qui capture automatiquement l'emplacement et permet de saisir des détails tels que le nombre d'Acanthaster vus et leur niveau de confiance dans le décompte.</li></ul>\nLa fonctionnalité phare du site est sa carte interactive et cliquable, qui a été saluée par un chercheur pour son utilité et sa facilité d'utilisation—répondant à un défi courant qu'ils rencontraient avec les outils internes. Construit avec <strong>Next.js</strong>, <strong>React</strong> et <strong>TypeScript</strong>, et soutenu par <strong>Postgres</strong> et <strong>NeonDB</strong>, la plateforme est à la fois efficace et évolutive, garantissant une expérience fluide pour tous les utilisateurs.\n\nCe projet a non seulement fourni un outil pratique pour la conservation marine, mais a également offert aux élèves une expérience pratique en développement logiciel, travail d'équipe et résolution de problèmes."
+		},
+		"Portfolio_Redesign": {
+			"heading": "Refonte du Portfolio",
+			"subheading": "Une approche rafraîchie et affinée pour présenter mon travail",
+			"description": "En m'appuyant sur les bases de mon premier portfolio, j'ai intégré les retours des utilisateurs et mon expérience croissante pour créer une refonte soignée. Cette version met l'accent à la fois sur la forme et la fonction, avec une esthétique visuellement agréable et cohérente, propulsée par <strong>Tailwind CSS</strong>. La structure et la lisibilité du code ont également été considérablement améliorées, facilitant la maintenance et l'évolution.\n\nConçu avec <strong>Next.js</strong>, le nouveau portfolio est plus rapide, plus propre et entièrement optimisé pour une meilleure expérience utilisateur."
+		},
+		"Retrocars_wesite": {
+			"heading": "Refonte du site web d'un collectionneur de voitures anciennes",
+			"subheading": "Une refonte moderne et réactive pour un collectionneur et revendeur de voitures anciennes",
+			"description": "Ce projet consistait à retravailler le site web obsolète d'un collectionneur et revendeur de voitures anciennes et rares. Initialement construit sur un thème WordPress personnalisé (Customify), le site n'était pas réactif et difficile à gérer, obligeant le propriétaire à dépendre d'un ami pour les mises à jour. J'ai entrepris de redessiner et de reconstruire le site à partir de zéro, en me concentrant sur la réactivité, la facilité d'utilisation et les fonctionnalités modernes.\n\nLa nouvelle version comprend :\n<ul>\n  <li>Un système de connexion personnalisé avec <strong>authentification JWT</strong> (stockée dans des cookies) pour un accès sécurisé</li>  <li>Une page complète <em>\"Nouvel article\"</em>, permettant au propriétaire d'ajouter facilement de nouvelles voitures avec des détails tels que le titre, la description, l'année du modèle, le prix et les photos</li>  <li>Des téléchargements automatiques de photos vers un <strong>stockage Vercel blob</strong> (similaire à un bucket S3), avec les URL et l'ordre d'affichage enregistrés dans une base de données <strong>Supabase</strong></li>  <li>Un gestionnaire de statut automatique : Le propriétaire peut marquer les voitures comme <em>disponibles</em>, <em>vendues</em> ou <em>réservées</em>, et elles sont affichées dans leurs catégories respectives sur la page des articles. Les voitures vendues ou réservées sont mises en évidence avec un ruban indiquant leur statut</li>  <li>Une page partenaire dédiée pour <strong>Secma cars</strong>, présentant les véhicules classés comme <em>neufs</em>, <em>d'occasion</em> et <em>prestations spéciales</em> (par exemple, la location d'une voiture pour une semaine ou des événements sur circuit)</li></ul>\nConstruit avec <strong>Next.js</strong> et <strong>Tailwind CSS</strong>, le site est désormais entièrement réactif, optimisé pour la navigation mobile et nettement plus rapide. La structure et la lisibilité du code améliorées facilitent la maintenance et l'évolution, tandis que l'interface intuitive permet au propriétaire de gérer le contenu de manière autonome."
+		},
+		"Winflotte": {
+			"heading": "Modernisation de Winflotte",
+			"subheading": "Modernisation et migration de l'application legacy Winflotte",
+			"description": "Ce projet consistait en une refonte complète de l'application SaaS legacy utilisée par les gestionnaires de flotte pour rationaliser les opérations et la gestion des données. Visant à améliorer à la fois l'expérience utilisateur et les performances, ce projet a introduit :\n<ul>\n  <li>Une interface plus intuitive</li>  <li>Une meilleure visualisation des données</li>  <li>Des fonctionnalités d'analyse avancées intégrées</li></ul>\nLes mises à jour clés comprenaient :\n<ul>\n  <li>Le déplacement de portions du programme Windows servi par Citrix vers une application API web</li>  <li>Une réécriture complète et une optimisation des processus backend en <strong>C#</strong></li>  <li>L'amélioration des interfaces frontend avec <strong>Angular</strong> et <strong>TypeScript</strong></li>  <li>Le remplacement de <strong>HFSQL</strong> (PCSoft) par <strong>Microsoft SQL Server</strong> et <strong>RabbitMQ</strong> pour un stockage et une journalisation des données plus efficaces</li></ul>\nCette migration nous a permis d'ajouter des fonctionnalités qui n'étaient pas initialement prévues dans la première conception de l'application, telles que :\n<ul>\n  <li>Une table spéciale pour la journalisation</li>  <li>L'intégration d'OAuth</li>  <li>Des interfaces automatiques d'entrée/sortie pour diverses données</li></ul>\nLa refonte a considérablement augmenté la réactivité de l'application, améliorant la satisfaction et l'expérience des utilisateurs, réduit le temps d'intégration des nouveaux utilisateurs et considérablement amélioré l'efficacité globale des équipes de gestion de flotte."
+		},
+		"EDI_Automation": {
+			"heading": "Logiciel automatisé de traitement des fichiers EDI",
+			"subheading": "Rationalisation des transactions EDI grâce à l'automatisation",
+			"description": "Ce projet consistait en le développement d'une solution automatisée pour le traitement des fichiers EDI (Échange de Données Informatisées), optimisant les opérations commerciales et minimisant la manipulation manuelle des données. Les fonctionnalités clés incluent :\n<ul>\n  <li>Lecture de boîte mail basée sur des paramètres SQL</li>  <li>Analyse automatisée des fichiers EDI</li>  <li>Cartographie des données personnalisable</li>  <li>Intégration avec les systèmes commerciaux existants</li>  <li>Rapports en temps réel et gestion des erreurs</li>  <li>Une interface pour la configuration et le suivi</li></ul>\nUtilisant des technologies telles que <strong>C#</strong> pour la logique principale, <strong>Angular/TypeScript</strong> pour l'interface utilisateur, <strong>SQL Server</strong> pour le stockage des données et des scripts <strong>PowerShell</strong> exécutés par le planificateur Windows, la solution a permis des gains de temps significatifs, une meilleure précision des données et une efficacité accrue pour le processus EDI."
+		},
+		"Portfolio_website": {
+			"heading": "Site web Portfolio",
+			"subheading": "Création d'un premier site web portfolio",
+			"description": "Un site web portfolio moderne avec toutes les informations nécessaires à transmettre. Il comprend des fonctionnalités telles que :\n<ul>\n  <li>Détection automatique du thème du système</li>  <li>Un changeur de couleur</li>  <li>Mémorisation des paramètres</li>  <li>Récupération des données de tous les projets depuis une base de données</li></ul>\nLe site est développé avec <strong>Next.js</strong> et <strong>TypeScript</strong> pour le frontend, et <strong>Vercel</strong> et <strong>PostgresDB</strong> pour le backend.\n\nIl présente quelques lacunes, principalement son apparence, mais il a bien servi en tant que premier projet <em>\"from scratch\"</em>."
+		},
+		"OptiXt_HR_auto": {
+			"heading": "Logiciel automatisé de traitement des fichiers RH",
+			"subheading": "Rationalisation de l'ingestion des données RH grâce à l'automatisation",
+			"description": "Historiquement, les fichiers RH contenant toutes les données relatives à chaque conducteur (noms, adresse, date et lieu de naissance, voiture qu'ils conduisent, etc.) étaient intégrés manuellement à l'aide d'interfaces existantes qui fonctionnaient bien mais nécessitaient d'être alimentées manuellement, vérifiées, et les rapports étaient également générés manuellement. Cela fonctionnait, mais n'était pas évolutif, et avec chaque nouveau client, l'interface devait encore être créée, en fonction de leur format de fichier.\n\nCe projet visait à résoudre ce problème, et l'ensemble du système d'interface RH a été recréé à partir de zéro, permettant :\n<ul>\n  <li>La création d'une nouvelle interface via la configuration uniquement (pas besoin de mettre à jour le code du logiciel SaaS pour en ajouter une nouvelle)</li>  <li>La configuration de quelle colonne de données correspond à quel champ dans la base de données via une interface web (<strong>Angular/TypeScript</strong>)</li>  <li>L'option d'historiser les changements (par exemple, si un conducteur passe d'une entité à une autre, cela crée une nouvelle ligne d'historique reflétant le changement)</li>  <li>La planification automatique des interfaces en fonction des accords clients</li>  <li>La génération d'un fichier de rapport Excel avec chaque modification effectuée, basé sur les anciennes et nouvelles données</li></ul>\nCela a permis à l'équipe en charge des données clients de concentrer leur attention ailleurs, d'améliorer l'efficacité et de réduire les erreurs humaines. Cela a également libéré une partie de l'équipe de développement, les retirant du processus de création d'interfaces."
+		},
+		"OptiXt_Email": {
+			"heading": "Outil d'envoi et d'analyse d'e-mails en masse",
+			"subheading": "Facilitation de l'envoi d'e-mails en masse",
+			"description": "J'ai créé un outil pour l'envoi d'e-mails en masse, avec un traitement HTML automatique pour des e-mails personnalisés au destinataire. L'outil a été écrit en <strong>Python</strong>, car je n'avais jamais eu de projet nécessitant cette technologie et je voulais l'explorer.\n\nLes fonctionnalités clés incluent :\n<ul>\n  <li>L'utilisation d'un fichier Excel comme entrée, avec des noms de colonnes correspondant aux champs du modèle HTML</li>  <li>La prise en charge des pièces jointes, avec des chemins définis dans le fichier Excel comme <em>\"attach.1\"</em>, <em>\"attach.2\"</em>, etc.</li>  <li>Une utilisation facile par les utilisateurs finaux internes : Tout ce qu'ils avaient à faire était d'écrire un e-mail de base et de placer des champs comme <em>\"prénom\"</em>, <em>\"nom\"</em> et <em>\"adresse\"</em> entre crochets, qui étaient remplacés par les données du fichier Excel pour chaque ligne</li></ul>\nCela a réduit le temps nécessaire pour accomplir certaines tâches convenues avec les clients de plusieurs jours à quelques minutes et a permis aux équipes internes de proposer un nouveau type de service dans lequel nous n'étions pas compétitifs auparavant."
+		}
+	}
+}

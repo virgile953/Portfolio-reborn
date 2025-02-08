@@ -1,34 +1,38 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import { notFound } from "next/navigation";
-import { portfolioProjects } from "../../lib/constants";
-import { Navbar } from "@/app/components/ui/Navbar";
+import { usePortfolioProjects } from "../../../lib/constants";
+import { Navbar } from "../../components/ui/Navbar";
 import { Code, Globe } from "lucide-react";
-import TechStack from "@/app/components/TechStack";
-import Button from "@/app/components/ui/Button";
-import { TextGenerateEffect } from "@/app/components/ui/TextGenerate";
-import { Project } from "@/app/types/project";
+import TechStack from "../../components/TechStack";
+import Button from "../../components/ui/Button";
+import { TextGenerateEffect } from "../../components/ui/TextGenerate";
+import { Project } from "../../../types/project";
+import { useTranslations } from "next-intl";
 
 const ProjectOverview = ({
 	params,
 }: {
 	params: Promise<{ projectName: string }>;
 }) => {
+	const items = usePortfolioProjects();
+	const t = useTranslations("Projects");
 	const [project, setProject] = useState<Project | null>(null);
 	const [isLoading, setIsLoading] = useState(true);
 	const resolvedParams = React.use(params);
 
 	useEffect(() => {
-		const foundProject = portfolioProjects.find(
+		const foundProject = items.find(
 			(p) => p.id.toLowerCase() === resolvedParams.projectName.toLowerCase()
 		);
 
 		if (!foundProject) {
-			notFound();
+			return notFound();
 		}
 
 		setProject(foundProject);
 		setIsLoading(false);
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [resolvedParams.projectName]);
 
 	if (isLoading) {
@@ -73,7 +77,7 @@ const ProjectOverview = ({
 						<div className="mt-8 mb-32 flex flex-col md:flex-row gap-10 md:gap-5 justify-between">
 							<div className="flex-1 w-auto lg:min-w-96">
 								<h2 className="text-3xl min-[430px]:text-4xl md:text-5xl dark:text-stone-200 mb-5">
-									Project Overview
+									{t("overview")}
 								</h2>
 
 								<TechStack techStack={techStack} />
@@ -85,7 +89,7 @@ const ProjectOverview = ({
 											iconPosition="left"
 											href={liveDemoUrl}
 										>
-											View Demo
+											{t("viewDemo")}
 										</Button>
 									)}
 									{sourceCodeUrl && (
@@ -94,7 +98,7 @@ const ProjectOverview = ({
 											iconPosition="left"
 											href={sourceCodeUrl}
 										>
-											Source Code
+											{t("sourceCode")}
 										</Button>
 									)}
 								</div>

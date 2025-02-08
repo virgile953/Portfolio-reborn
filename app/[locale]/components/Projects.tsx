@@ -1,15 +1,19 @@
 "use client";
-import { portfolioProjects } from "../lib/constants";
+// import { portfolioProjects } from "../../lib/constants";
+import { usePortfolioProjects } from "../../lib/constants";
 import ProjectCard from "./ProjectCard";
 import { ChevronRight } from "lucide-react";
-import Link from "next/link";
+import { Link } from "@/i18n/routing";
+import { useTranslations } from "next-intl";
 
 const ProjectsSection = () => {
+	const t = useTranslations("Projects");
+	const projects = usePortfolioProjects();
 	return (
 		<div className="py-32" id="work">
 			<div className="flex gap-4 flex-col sm:flex-row sm:items-center justify-between">
 				<h2 className="text-3xl min-[430px]:text-4xl md:text-5xl font-bold dark:text-stone-200">
-					My portfolio
+					{t("title")}
 				</h2>
 				<div className="gap-4">
 					<Link
@@ -22,13 +26,13 @@ const ProjectsSection = () => {
 						text-slate-200 transition-colors focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50
 					`}
 					>
-						All Projects
+						{t("allProjects")}
 						<ChevronRight className="w-5 h-5" />
 					</Link>
 				</div>
 			</div>
 			<div className="grid lg:grid-cols-2 gap-4 mt-8">
-				{portfolioProjects.slice(0, 4).map((project) => (
+				{projects.slice(0, 4).map((project) => (
 					<ProjectCard key={project.id} project={project} />
 				))}
 			</div>

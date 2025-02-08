@@ -7,35 +7,36 @@ import { BriefcaseBusiness,
 	Moon,
 	Sun
 	} from "lucide-react";
-import { cn } from "../../lib/utils"
+import { cn } from "../../../lib/utils"
 import {
 	AnimatePresence,
 	motion,
 	useMotionValueEvent,
 	useScroll,
 } from "framer-motion";
-import Link from "next/link";
+import {Link} from '@/i18n/routing';
 import React from "react";
 import { useState } from "react";
 import { useTheme } from "next-themes";
+import { useTranslations } from "next-intl";
 
 type navItem = {
 	name: string;
 	link: string;
 	icon?: JSX.Element | undefined;
 };
-
-const navItems = [
-	{ name: "Home", link: "#home", icon: <House /> },
-	{ name: "Work", link: "#work", icon: <BriefcaseBusiness /> },
-	{ name: "About", link: "#about", icon: <UserRound /> },
-	{ name: "Working on", link: "#now", icon: <Wrench /> },
-	{ name: "Contact", link: "#contact", icon: <ContactIco /> },
-  ];
-
 let useAnimation: boolean = true;
 
-export const Navbar = ({redirectionType, animate, items = navItems} : {redirectionType?: "local" | "global", animate?: boolean, items?: navItem[]}) => {
+export const Navbar = ({redirectionType, animate} : {redirectionType?: "local" | "global", animate?: boolean}) => {
+	const t = useTranslations("Navbar");
+	const navItems = [
+		{ name: t("Home"), link: "#home", icon: <House /> },
+		{ name: t("Work"), link: "#work", icon: <BriefcaseBusiness /> },
+		{ name: t("About"), link: "#about", icon: <UserRound /> },
+		{ name: t("WorkingOn"), link: "#now", icon: <Wrench /> },
+		{ name: t("Contact"), link: "#contact", icon: <ContactIco /> },
+		];
+
 	const { scrollYProgress } = useScroll();
 	const theme = useTheme();
 	if (animate == false)
@@ -45,7 +46,7 @@ export const Navbar = ({redirectionType, animate, items = navItems} : {redirecti
 
 	if (redirectionType && redirectionType === "global")
 	{
-		items.forEach(item => {
+		navItems.forEach(item => {
 			if (!item.link.startsWith("/"))
 				item.link = "/" + item.link;
 		})
@@ -88,7 +89,7 @@ export const Navbar = ({redirectionType, animate, items = navItems} : {redirecti
 			className="flex max-w-fit fixed top-10 inset-x-0 mx-auto border border-dark-700 rounded-lg bg-dark-200
 			 z-[5000] px-8 py-4 items-center justify-center space-x-4"
 			>
-			{items.map((navItem: navItem, idx: number) => (
+			{navItems.map((navItem: navItem, idx: number) => (
 				<Link
 				key={`link=${idx}`}
 				href={navItem.link}

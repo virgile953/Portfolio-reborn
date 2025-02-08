@@ -1,10 +1,13 @@
 "use client";
 
-import { techCardsItems } from "../lib/constants";
+import { useTechCardsItems } from "../../lib/constants";
 import TechCard from "./TechCard";
 import { motion } from "framer-motion";
+import { useTranslations } from "next-intl"; // declare this import
 
 const Skills = () => {
+	const t = useTranslations("Skills");
+	const items = useTechCardsItems();
 	return (
 		<div className="relative z-10 py-16 sm:py-24" id="about">
 			<div className="space-y-4 mb-10">
@@ -15,7 +18,7 @@ const Skills = () => {
 					transition={{ duration: 0.5, delay: 0.25 }}
 					className="text-3xl min-[430px]:text-4xl md:text-5xl font-bold dark:text-stone-200"
 				>
-					Current technologies
+					{t("Current")}
 				</motion.h1>
 				<motion.p
 					initial={{ opacity: 0, x: -90 }}
@@ -24,9 +27,8 @@ const Skills = () => {
 					transition={{ duration: 0.5, delay: 0.25 }}
 					className="text-sm min-[430px]:text-base max-w-lg md:max-w-3xl text-dark-200/70 dark:text-stone-200/70"
 				>
-					I&apos;m proficient in a range of modern technologies that help me
-					build highly functional solutions. <br /> Here are some of my main
-					technologies :
+					{t("Subtitle")}<br/>
+					{t("MainTechs")}
 				</motion.p>
 			</div>
 
@@ -45,7 +47,7 @@ const Skills = () => {
 				}}
 				className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 items-center justify-between gap-4"
 			>
-				{techCardsItems.map((cardItem) => (
+				{items.map((cardItem) => (
 					<motion.div
 						key={cardItem.name}
 						variants={{

@@ -4,7 +4,7 @@ import Image from "next/image";
 import ProgressBar from "./ui/ProgressBar";
 import { EyeIcon } from "lucide-react";
 import { motion, useInView } from "framer-motion";
-import Link from "next/link";
+import {Link} from '@/i18n/routing';
 import { useRef, useState } from "react";
 
 const TechCard = ({

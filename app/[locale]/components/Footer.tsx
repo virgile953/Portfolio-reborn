@@ -1,8 +1,8 @@
 "use client";
 import { Tooltip } from "@nextui-org/tooltip";
-import Link from "next/link";
+import {Link} from '@/i18n/routing';
 import React from "react";
-import { portfolioProjects } from "../lib/constants";
+import { usePortfolioProjects } from "../../lib/constants";
 import Image from "next/image";
 import { AtSign, CornerDownRight, MapPin, Phone } from "lucide-react";
 
@@ -15,6 +15,8 @@ const handleClick = () => {
 };
 
 const Footer = () => {
+	const portfolioProjects = usePortfolioProjects();
+
 	return (
 		<>
 			<div

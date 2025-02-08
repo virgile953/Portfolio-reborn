@@ -6,9 +6,11 @@ import React from "react";
 import Image from "next/image";
 import { useTheme } from "next-themes";
 import { Tooltip } from "@nextui-org/tooltip";
+import { useTranslations } from "next-intl"; // declare this import
 
 const HeroSection = () => {
 	const theme = useTheme();
+	const t = useTranslations("Hero");
 	return (
 		<>
 			<div
@@ -34,20 +36,18 @@ const HeroSection = () => {
 						className="text-[40px] md:text-6xl lg:text-7xl font-bold text-center max-w-5xl leading-snug tracking-wide"
 					/>
 					<p className="pt-5 pb-8 text-sm sm:text-base md:text-lg text-dark-200 dark:text-stone-200/70">
-						Hi, I&apos;m Virgile, a developer focused on creating efficient,
-						high-performance applications through low level development and data
-						engineering.
+						{t("subtitle")}
 					</p>
 					<div className="flex flex-col sm:flex-row items-center gap-4">
 						<Button icon={<ChevronRight />} href="#work">
-							See My Work
+							{t("seeWork")}
 						</Button>
 						<div
 							// download
 							className="flex items-center gap-2.5 group"
 						>
 							<span className="ml-8 font-semibold flex flex-row">
-								Download CV:
+								{t("downloadCV")}
 								{/* if theme is light theme then download light themed cv (duh) */}
 								<a
 									className="ml-4 w-7 h-7 -translate-y-1 transition-transform duration-200 transform hover:scale-125"
@@ -61,7 +61,7 @@ const HeroSection = () => {
 									{/* Apparently, some RH print PDFs but are, for ecological reasons, preferring PDFs that aren't all black */}
 									{theme.theme === "dark" ? (
 										<Tooltip
-											content="for lighter-colored PDF, use light mode"
+											content={t("lighterPDF")}
 											showArrow={true}
 											color="secondary"
 											placement="bottom"
@@ -94,7 +94,7 @@ const HeroSection = () => {
 								>
 									{theme.theme === "dark" ? (
 										<Tooltip
-											content="for lighter-colored PDF, use light mode"
+											content={t("lighterPDF")}
 											showArrow={true}
 											color="secondary"
 											placement="bottom"
