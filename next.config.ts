@@ -13,7 +13,7 @@ const nextConfig: NextConfig = {
 	},
 	staticPageGenerationTimeout: 100,
 	images: {
-		minimumCacheTTL: 604800, // Increase from 60 to 1 week
+		minimumCacheTTL: 60 * 60 * 24 * 7 * 4, // 4 weeks
 		formats: ['image/webp'], // Preferred formats for optimization
 	},
 };
