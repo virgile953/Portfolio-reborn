@@ -25,6 +25,7 @@ const WorkingOn = () => {
 						alt="Working on 1"
 						width={800}
 						height={500}
+						unoptimized
 					/>
 				</div>
 				<div className="text-l row-span-3">

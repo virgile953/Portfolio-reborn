@@ -72,6 +72,7 @@ const HeroSection = () => {
 												src="/imgs/fr.svg"
 												width={24}
 												height={24}
+												unoptimized
 											/>
 										</Tooltip>
 									) : (
@@ -80,6 +81,7 @@ const HeroSection = () => {
 											src="/imgs/fr.svg"
 											width={24}
 											height={24}
+											unoptimized
 										/>
 									)}
 								</a>
@@ -105,6 +107,7 @@ const HeroSection = () => {
 												src="/imgs/uk.svg"
 												width={24}
 												height={24}
+												unoptimized
 											/>
 										</Tooltip>
 									) : (
@@ -113,6 +116,7 @@ const HeroSection = () => {
 											src="/imgs/uk.svg"
 											width={24}
 											height={24}
+											unoptimized
 										/>
 									)}
 								</a>
