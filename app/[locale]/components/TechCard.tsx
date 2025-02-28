@@ -61,6 +61,7 @@ const TechCard = ({
 						className={`object-contain ${
 							imageUrl.toLowerCase().includes("nextjs") ? "dark:invert" : ""
 						} hover:scale-110 transition-transform duration-200`}
+						unoptimized
 					/>
 				</motion.div>
 			</div>

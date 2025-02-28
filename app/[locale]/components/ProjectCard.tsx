@@ -39,6 +39,7 @@ const ProjectCard = ({ project }: { project: ProjectProps }) => {
 						className={`rounded-lg object-cover transition-transform duration-500 ${
 							imageUrl.toLowerCase().includes("portfolio") ? "dark:invert" : ""
 						} scale-90 hover:scale-100`}
+						unoptimized
 					/>
 				</Link>
 
