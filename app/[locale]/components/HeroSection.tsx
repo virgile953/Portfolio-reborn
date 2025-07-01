@@ -6,7 +6,7 @@ import React from "react";
 import Image from "next/image";
 import { useTheme } from "next-themes";
 import { Tooltip } from "@nextui-org/tooltip";
-import { useTranslations } from "next-intl"; // declare this import
+import { useTranslations } from "next-intl";
 
 const HeroSection = () => {
 	const theme = useTheme();
