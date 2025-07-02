@@ -108,7 +108,7 @@ export const Navbar = ({
 				{navItems.map((navItem: navItem, idx: number) => (
 					<Link
 						key={`link=${idx}`}
-						href={navItem.link as any}
+						href={navItem.link}
 						className={cn(
 							"relative text-neutral-50 items-center flex space-x-4 hover:text-neutral-300"
 						)}
