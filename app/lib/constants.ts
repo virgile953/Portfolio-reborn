@@ -68,9 +68,9 @@ export const useTechCardsItems = () => {
 			progress: 8,
 		},
 		{
-			name: "MongoDB",
-			description: t("MongoDB.description"),
-			imageUrl: "/imgs/logos/mongodb.svg",
+			name: "Node Js",
+			description: t("NodeJs.description"),
+			imageUrl: "/imgs/logos/nodejs.svg",
 			bgColor: "bg-[#58AA50]/20",
 			progress: 5,
 		},
@@ -95,6 +95,22 @@ export const usePortfolioProjects = () => {
 	const t = useTranslations("PortfolioProjects");
 	return [
 		{
+			id: "PingServer",
+			heading: t("PingServer.heading"),
+			subheading: t("PingServer.subheading"),
+			description: t.markup("PingServer.description", {
+				strong: (chunks) => `<strong>${chunks}</strong>`,
+				li: (chunks) => `<li>• ${chunks}</li>`,
+				ul: (chunks) => `<ul>${chunks}</ul>`,
+				em: (chunks) => `<em>${chunks}</em>`,
+			}),
+			imageUrl: "/imgs/projects/portfolioServerPing.svg",
+			imageDemoUrl: "/imgs/projects/ServerPingDemo.webp",
+			techStack: ["React", "Remix", "Bun", "NodeJs", "TypeScript", "Sqlite 3", "Cron jobs"],
+			// liveDemoUrl: "https://alert-acanthaster.vercel.app/",
+			// sourceCodeUrl: "https://github.com/virgile953/alertAcanthaster",
+		},
+		{
 			id: "Alert_acanthaster",
 			heading: t("Alert_acanthaster.heading"),
 			subheading: t("Alert_acanthaster.subheading"),
@@ -102,7 +118,8 @@ export const usePortfolioProjects = () => {
 				strong: (chunks) => `<strong>${chunks}</strong>`,
 				li: (chunks) => `<li>• ${chunks}</li>`,
 				ul: (chunks) => `<ul>${chunks}</ul>`,
-				em: (chunks) => `<em>${chunks}</em>`}),
+				em: (chunks) => `<em>${chunks}</em>`,
+			}),
 			imageUrl: "/imgs/projects/portfolioachantaster.svg",
 			techStack: [
 				"NextJs",
@@ -112,6 +129,7 @@ export const usePortfolioProjects = () => {
 				"Postgres sql",
 				"Scheduler",
 			],
+
 			liveDemoUrl: "https://alert-acanthaster.vercel.app/",
 			sourceCodeUrl: "https://github.com/virgile953/alertAcanthaster",
 		},
@@ -123,7 +141,8 @@ export const usePortfolioProjects = () => {
 				strong: (chunks) => `<strong>${chunks}</strong>`,
 				li: (chunks) => `<li>• ${chunks}</li>`,
 				ul: (chunks) => `<ul>${chunks}</ul>`,
-				em: (chunks) => `<em>${chunks}</em>`}),
+				em: (chunks) => `<em>${chunks}</em>`,
+			}),
 			imageUrl: "/imgs/projects/portfolio_redesign.svg",
 			techStack: ["Typescript", "NextJS", "TailwindCSS", "Vercel", "Bun"],
 			liveDemoUrl: "https://vbarbera.com",
@@ -137,7 +156,8 @@ export const usePortfolioProjects = () => {
 				strong: (chunks) => `<strong>${chunks}</strong>`,
 				li: (chunks) => `<li>• ${chunks}</li>`,
 				ul: (chunks) => `<ul>${chunks}</ul>`,
-				em: (chunks) => `<em>${chunks}</em>`}),
+				em: (chunks) => `<em>${chunks}</em>`,
+			}),
 			imageUrl: "/imgs/projects/portfolio_retrocar.svg",
 			techStack: [
 				"Typescript",
@@ -158,7 +178,8 @@ export const usePortfolioProjects = () => {
 				strong: (chunks) => `<strong>${chunks}</strong>`,
 				li: (chunks) => `<li>• ${chunks}</li>`,
 				ul: (chunks) => `<ul>${chunks}</ul>`,
-				em: (chunks) => `<em>${chunks}</em>`}),
+				em: (chunks) => `<em>${chunks}</em>`,
+			}),
 			imageUrl: "/imgs/projects/Winflotte.svg",
 			techStack: [
 				"TypeScript",
@@ -181,7 +202,8 @@ export const usePortfolioProjects = () => {
 				strong: (chunks) => `<strong>${chunks}</strong>`,
 				li: (chunks) => `<li>• ${chunks}</li>`,
 				ul: (chunks) => `<ul>${chunks}</ul>`,
-				em: (chunks) => `<em>${chunks}</em>`}),
+				em: (chunks) => `<em>${chunks}</em>`,
+			}),
 			imageUrl: "/imgs/projects/portfolioEDI.svg",
 			techStack: [
 				"C#",
@@ -204,7 +226,8 @@ export const usePortfolioProjects = () => {
 				strong: (chunks) => `<strong>${chunks}</strong>`,
 				li: (chunks) => `<li>• ${chunks}</li>`,
 				ul: (chunks) => `<ul>${chunks}</ul>`,
-				em: (chunks) => `<em>${chunks}</em>`}),
+				em: (chunks) => `<em>${chunks}</em>`,
+			}),
 			imageUrl: "/imgs/projects/portfolio.svg",
 			techStack: [
 				"TypeScript",
@@ -225,7 +248,8 @@ export const usePortfolioProjects = () => {
 				strong: (chunks) => `<strong>${chunks}</strong>`,
 				li: (chunks) => `<li>• ${chunks}</li>`,
 				ul: (chunks) => `<ul>${chunks}</ul>`,
-				em: (chunks) => `<em>${chunks}</em>`}),
+				em: (chunks) => `<em>${chunks}</em>`,
+			}),
 			imageUrl: "/imgs/projects/portfolioDriver.svg",
 			techStack: [
 				"C#",
@@ -248,7 +272,8 @@ export const usePortfolioProjects = () => {
 				strong: (chunks) => `<strong>${chunks}</strong>`,
 				li: (chunks) => `<li>• ${chunks}</li>`,
 				ul: (chunks) => `<ul>${chunks}</ul>`,
-				em: (chunks) => `<em>${chunks}</em>`}),
+				em: (chunks) => `<em>${chunks}</em>`,
+			}),
 			imageUrl: "/imgs/projects/portfolioPython.svg",
 			techStack: ["Python", "OpenPyxl", "Microsoft Excel"],
 			liveDemoUrl: "",

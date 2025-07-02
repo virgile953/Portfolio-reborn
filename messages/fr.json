@@ -2,7 +2,7 @@
 	"Navbar": {
 		"Home": "Accueil",
 		"Work": "Travaux",
-		"About": "À propos",
+		"About": "About",
 		"WorkingOn": "Actuellement",
 		"Contact": "Contact"
 	},
@@ -26,7 +26,7 @@
 		"viewDemo": "Voir la démo",
 		"sourceCode": "Code source",
 		"notFound": {
-			"title": "OOps, on dirait que je n'ai pas encore réalisé ce projet ¯\\_(ツ)_/¯",
+			"title": "Oops, on dirait que je n'ai pas encore réalisé ce projet ¯\\_(ツ)_/¯",
 			"goHome": "Retour à l'accueil"
 		}
 	},
@@ -75,8 +75,8 @@
 		"Postgres": {
 			"description": "Outil de base de données"
 		},
-		"MongoDB": {
-			"description": "Outil de base de données NoSQL"
+		"NodeJs": {
+			"description": "Environnement JavaScript"
 		},
 		"SQL": {
 			"description": "Langage de requête de base de données"
@@ -86,6 +86,11 @@
 		}
 	},
 	"PortfolioProjects": {
+		"PingServer": {
+			"heading": "PingServer",
+			"subheading": "WebApp de supervision réseau pour le Salon du Bourget (React + Remix)",
+			"description": "Le projet <strong>PingServer</strong> est une application web développée pour offrir un monitoring en temps réel de l’état électrique de dispositifs réseau installés sur le site du <em>Salon International de l’Aéronautique et de l’Espace</em> (SIAE) au Bourget. Cette WebApp, construite avec <strong>React</strong> et servie via <strong>Remix</strong>, permet de visualiser, enregistrer et suivre l’état de machines stratégiquement positionnées en amont des onduleurs (téléphones IP, postes techniques, etc.).\n\nL’origine du projet remonte à une demande de <strong>M. Hong QUACH</strong>, responsable de l’architecture réseau du salon, suite à des coupures de courant récurrentes sur des zones clés du site : portes d’accès, points d’accueil, services administratifs... Bien que protégés par des onduleurs, ces équipements ne déclenchaient pas d’alerte immédiate lors d'une coupure. L’absence de notification rendait la détection difficile jusqu’à ce qu’un utilisateur signale une perte de connectivité.\n\nPour répondre à cette problématique, nous avons choisi de positionner des <strong>téléphones IP</strong> — matériels disponibles en grand nombre, économiques et capables de redémarrer automatiquement — en amont des onduleurs. Chaque téléphone est pingé toutes les 20 secondes (intervalle configurable), ce qui permet de détecter toute panne électrique active en quasi temps réel.\n\nL'application repose sur une architecture simple et efficace :\n<ul>\n  <li><strong>Interface en temps réel</strong> : Affichage immédiat du statut de chaque machine (en ligne / hors ligne), avec un historique graphique des 8 derniers pings et une courbe de temps de réponse mise à jour en direct.</li>\n  <li><strong>Alertes automatisées</strong> : Envoi d’un e-mail récapitulatif toutes les 5 minutes à chaque utilisateur enregistré, listant l’état des machines surveillées.</li>\n  <li><strong>Gestion complète via base de données</strong> :\n    <ul>\n      <li>Ajout, édition ou suppression de <strong>contacts</strong> (nom, email)</li>\n      <li>Administration des <strong>machines à pinguer</strong> (IP, nom, localisation, fréquence)</li>\n      <li>Historique des <strong>logs</strong> : date/heure, état, machine concernée, référent associé, temps de réponse</li>\n    </ul>\n  </li>\n  <li><strong>Console SQL intégrée</strong> : Interface pour requêtes manuelles, réservée aux administrateurs (usage avec précaution).</li>\n</ul>\n\nL’application a été conçue pour être rapidement déployable dans un contexte critique : elle utilise une stack légère (<strong>Node.js 20</strong>, <strong>Bun</strong>, <strong>SQLite</strong>), avec un système de build optimisé et une compatibilité avec <strong>PM2</strong> pour un démarrage automatique en tant que service système.\n\nCe projet a apporté une solution concrète, rapide et visuelle aux équipes techniques du salon, renforçant leur capacité à anticiper et réagir aux coupures de courant sur des points stratégiques du réseau."
+		},
 		"Alert_acanthaster": {
 			"heading": "Alerte Acanthaster",
 			"subheading": "Création d'un site web pour un concours sur la vie marine",
@@ -97,9 +102,9 @@
 			"description": "En m'appuyant sur les bases de mon premier portfolio, j'ai intégré les retours des utilisateurs et mon expérience croissante pour créer une refonte soignée. Cette version met l'accent à la fois sur la forme et la fonction, avec une esthétique visuellement agréable et cohérente, propulsée par <strong>Tailwind CSS</strong>. La structure et la lisibilité du code ont également été considérablement améliorées, facilitant la maintenance et l'évolution.\n\nConçu avec <strong>Next.js</strong>, le nouveau portfolio est plus rapide, plus propre et entièrement optimisé pour une meilleure expérience utilisateur."
 		},
 		"Retrocars_wesite": {
-			"heading": "Refonte du site web d'un collectionneur de voitures anciennes",
-			"subheading": "Une refonte moderne et réactive pour un collectionneur et revendeur de voitures anciennes",
-			"description": "Ce projet consistait à retravailler le site web obsolète d'un collectionneur et revendeur de voitures anciennes et rares. Initialement construit sur un thème WordPress personnalisé (Customify), le site n'était pas réactif et difficile à gérer, obligeant le propriétaire à dépendre d'un ami pour les mises à jour. J'ai entrepris de redessiner et de reconstruire le site à partir de zéro, en me concentrant sur la réactivité, la facilité d'utilisation et les fonctionnalités modernes.\n\nLa nouvelle version comprend :\n<ul>\n  <li>Un système de connexion personnalisé avec <strong>authentification JWT</strong> (stockée dans des cookies) pour un accès sécurisé</li>  <li>Une page complète <em>\"Nouvel article\"</em>, permettant au propriétaire d'ajouter facilement de nouvelles voitures avec des détails tels que le titre, la description, l'année du modèle, le prix et les photos</li>  <li>Des téléchargements automatiques de photos vers un <strong>stockage Vercel blob</strong> (similaire à un bucket S3), avec les URL et l'ordre d'affichage enregistrés dans une base de données <strong>Supabase</strong></li>  <li>Un gestionnaire de statut automatique : Le propriétaire peut marquer les voitures comme <em>disponibles</em>, <em>vendues</em> ou <em>réservées</em>, et elles sont affichées dans leurs catégories respectives sur la page des articles. Les voitures vendues ou réservées sont mises en évidence avec un ruban indiquant leur statut</li>  <li>Une page partenaire dédiée pour <strong>Secma cars</strong>, présentant les véhicules classés comme <em>neufs</em>, <em>d'occasion</em> et <em>prestations spéciales</em> (par exemple, la location d'une voiture pour une semaine ou des événements sur circuit)</li></ul>\nConstruit avec <strong>Next.js</strong> et <strong>Tailwind CSS</strong>, le site est désormais entièrement réactif, optimisé pour la navigation mobile et nettement plus rapide. La structure et la lisibilité du code améliorées facilitent la maintenance et l'évolution, tandis que l'interface intuitive permet au propriétaire de gérer le contenu de manière autonome."
+			"heading": "Refonte du site web d'un restaurateur de voitures anciennes",
+			"subheading": "Une refonte moderne et réactive pour un restaurateur et revendeur de voitures anciennes",
+			"description": "Ce projet consistait à retravailler le site web obsolète d'un restaurateur et revendeur de voitures anciennes et rares. Initialement construit sur un thème WordPress personnalisé (Customify), le site n'était pas réactif et difficile à gérer, obligeant le propriétaire à dépendre d'un ami pour les mises à jour. J'ai entrepris de redessiner et de reconstruire le site à partir de zéro, en me concentrant sur la réactivité, la facilité d'utilisation et les fonctionnalités modernes.\n\nLa nouvelle version comprend :\n<ul>\n  <li>Un système de connexion personnalisé avec <strong>authentification JWT</strong> (stockée dans des cookies) pour un accès sécurisé</li>  <li>Une page complète <em>\"Nouvel article\"</em>, permettant au propriétaire d'ajouter facilement de nouvelles voitures avec des détails tels que le titre, la description, l'année du modèle, le prix et les photos</li>  <li>Des téléchargements automatiques de photos vers un <strong>stockage Vercel blob</strong> (similaire à un bucket S3), avec les URL et l'ordre d'affichage enregistrés dans une base de données <strong>Supabase</strong></li>  <li>Un gestionnaire de statut automatique : Le propriétaire peut marquer les voitures comme <em>disponibles</em>, <em>vendues</em> ou <em>réservées</em>, et elles sont affichées dans leurs catégories respectives sur la page des articles. Les voitures vendues ou réservées sont mises en évidence avec un ruban indiquant leur statut</li>  <li>Une page partenaire dédiée pour <strong>Secma cars</strong>, présentant les véhicules classés comme <em>neufs</em>, <em>d'occasion</em> et <em>prestations spéciales</em> (par exemple, la location d'une voiture pour une semaine ou des événements sur circuit)</li></ul>\nConstruit avec <strong>Next.js</strong> et <strong>Tailwind CSS</strong>, le site est désormais entièrement réactif, optimisé pour la navigation mobile et nettement plus rapide. La structure et la lisibilité du code améliorées facilitent la maintenance et l'évolution, tandis que l'interface intuitive permet au propriétaire de gérer le contenu de manière autonome."
 		},
 		"Winflotte": {
 			"heading": "Modernisation de Winflotte",

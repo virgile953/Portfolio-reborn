@@ -7,4 +7,5 @@ export interface Project {
   techStack: string[];
   liveDemoUrl?: string;
   sourceCodeUrl?: string;
+  imageDemoUrl?: string;
 }

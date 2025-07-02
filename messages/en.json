@@ -46,8 +46,8 @@
 		"Postgres": {
 			"description": "Database tool"
 		},
-		"MongoDB": {
-			"description": "NoSQL Database tool"
+		"NodeJs": {
+			"description": "JavaScript runtime"
 		},
 		"SQL": {
 			"description": "Database query language"
@@ -86,6 +86,11 @@
 		"viewDemo": "View Demo"
 	},
 	"PortfolioProjects": {
+		"PingServer": {
+			"heading": "PingServer",
+			"subheading": "Network monitoring WebApp for the Paris Air Show (React + Remix)",
+			"description": "<strong>PingServer</strong> is a web application developed to provide real-time monitoring of the electrical status of network devices deployed at the <em>Salon International de l’Aéronautique et de l’Espace</em> (SIAE) in Le Bourget. Built with <strong>React</strong> and served via <strong>Remix</strong>, this WebApp allows the visualization, recording, and tracking of machines strategically placed upstream from UPS systems (IP phones, supervision PCs, etc.).\n\nThe project originated from a request by <strong>Mr. Hong QUACH</strong>, network architecture lead at the event, in response to frequent power outages affecting key areas such as entrance gates, reception desks, and administrative zones. Although these areas were backed by UPS systems, no immediate alerts were triggered during an outage, making it difficult to detect issues until users experienced a network disconnection.\n\nTo address this problem, we deployed <strong>IP phones</strong> — a cost-effective and widely available solution that automatically restarts — upstream from the UPS systems. Each phone is pinged every 20 seconds (configurable), allowing near real-time detection of active power outages.\n\nThe application is based on a simple and efficient architecture:\n<ul>\n  <li><strong>Real-time interface</strong>: Instant display of each machine's status (online / offline), with a graph showing the last 8 pings and a live-updated response time chart.</li>\n  <li><strong>Automated alerts</strong>: A summary email is sent every 5 minutes to each registered user, listing the status of all monitored machines.</li>\n  <li><strong>Database-driven management</strong>:\n    <ul>\n      <li>Create, edit, or delete <strong>contacts</strong> (name, email)</li>\n      <li>Manage <strong>ping targets</strong> (IP address, name, location, ping frequency)</li>\n      <li>Access <strong>log history</strong>: timestamp, status, target machine, assigned contact, response time</li>\n    </ul>\n  </li>\n  <li><strong>Integrated SQL console</strong>: A manual query interface for technical administrators (use with caution).</li>\n</ul>\n\nThe application was designed to be quickly deployable in critical environments. It uses a lightweight stack (<strong>Node.js 20</strong>, <strong>Bun</strong>, <strong>SQLite</strong>), supports optimized builds, and integrates with <strong>PM2</strong> for service-style automatic startup.\n\nThis project provided a practical, fast, and visual monitoring solution for the technical teams at the event, enhancing their ability to anticipate and respond to power issues across strategic network points."
+		},
 		"Alert_acanthaster": {
 			"heading": "Alert Acanthaster",
 			"subheading": "Making of a website for a competition about sea life",

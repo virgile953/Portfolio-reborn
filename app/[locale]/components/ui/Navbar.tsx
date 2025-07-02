@@ -20,7 +20,8 @@ import React from "react";
 import { useState } from "react";
 import { useTheme } from "next-themes";
 import { useTranslations } from "next-intl";
-import { usePathname, useRouter } from "next/navigation";
+import { usePathname, useRouter } from "@/i18n/routing";
+import { useParams } from "next/navigation";
 
 type navItem = {
 	name: string;
@@ -49,13 +50,13 @@ export const Navbar = ({
 	const theme = useTheme();
 	const pathname = usePathname();
 	const router = useRouter();
-	const currentLocale = pathname.split('/')[1]; // Get current locale from URL
+	const params = useParams();
+	const currentLocale = params.locale as string;
 
 	const handleLanguageChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
 		const newLocale = e.target.value;
-		// Get the path without locale prefix
-		const pathWithoutLocale = pathname.replace(`/${currentLocale}`, '');
-		router.push(`/${newLocale}${pathWithoutLocale}`);
+		// Use next-intl router which preserves the current path
+		router.replace(pathname, { locale: newLocale });
 	};
 
 	if (animate == false) useAnimation = false;
@@ -107,7 +108,7 @@ export const Navbar = ({
 				{navItems.map((navItem: navItem, idx: number) => (
 					<Link
 						key={`link=${idx}`}
-						href={navItem.link}
+						href={navItem.link as any}
 						className={cn(
 							"relative text-neutral-50 items-center flex space-x-4 hover:text-neutral-300"
 						)}

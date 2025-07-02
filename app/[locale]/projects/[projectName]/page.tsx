@@ -9,6 +9,7 @@ import Button from "../../components/ui/Button";
 import { TextGenerateEffect } from "../../components/ui/TextGenerate";
 import { Project } from "../../../types/project";
 import { useTranslations } from "next-intl";
+import Image from "next/image";
 
 const ProjectOverview = ({
 	params,
@@ -48,6 +49,7 @@ const ProjectOverview = ({
 		subheading,
 		description,
 		techStack,
+		imageDemoUrl,
 		liveDemoUrl,
 		sourceCodeUrl,
 	} = project;
@@ -79,7 +81,15 @@ const ProjectOverview = ({
 								<h2 className="text-3xl min-[430px]:text-4xl md:text-5xl dark:text-stone-200 mb-5">
 									{t("overview")}
 								</h2>
-
+								{imageDemoUrl ? (
+									<Image
+										src={imageDemoUrl}
+										alt={heading}
+										width={800}
+										height={450}
+										className="mb-5 rounded-lg object-cover w-full h-auto"
+									/>
+								) : null}
 								<TechStack techStack={techStack} />
 
 								<div className="flex items-center gap-4 mt-10">
