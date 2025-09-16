@@ -60,8 +60,8 @@ const ProjectOverview = ({
 				<Navbar redirectionType="global" animate={false} />
 
 				<div className="pt-36 max-w-7xl">
-					<div className="h-screen w-full dark:bg-dark-100 bg-white dark:bg-grid-white/[0.04] bg-grid-black/[0.06] absolute top-0 left-0 flex items-center justify-center">
-						<div className="absolute pointer-events-none inset-0 flex items-center justify-center dark:bg-dark-100 bg-white mask-[radial-gradient(ellipse_at_center,transparent_20%,black)]" />
+					<div className="h-screen w-full bg-background dark:bg-grid-white/[0.04] bg-grid-black/[0.06] absolute top-0 left-0 flex items-center justify-center">
+						<div className="absolute pointer-events-none inset-0 flex items-center justify-center bg-background mask-[radial-gradient(ellipse_at_center,transparent_20%,black)]" />
 					</div>
 
 					<div className="relative z-10">
@@ -78,7 +78,7 @@ const ProjectOverview = ({
 
 						<div className="mt-8 mb-32 flex flex-col md:flex-row gap-10 md:gap-5 justify-between">
 							<div className="flex-1 w-auto lg:min-w-96">
-								<h2 className="text-3xl min-[430px]:text-4xl md:text-5xl dark:text-stone-200 mb-5">
+								<h2 className="text-3xl min-[430px]:text-4xl md:text-5xl mb-5">
 									{t("overview")}
 								</h2>
 								{imageDemoUrl ? (
