@@ -22,7 +22,7 @@ function checkColor(color: string, theme: string): string {
 }
 
 const ProgressBar = ({ progress, color, startAnimation }: ProgressBarProps) => {
-	const theme = useTheme().theme;
+	const { theme } = useTheme();
 	const [animatedProgress, setAnimatedProgress] = useState(0);
 	const hexMatch = color.match(/#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})/);
 	const cleanColor = checkColor(hexMatch ? hexMatch[0] : "#000000", theme || "dark");
