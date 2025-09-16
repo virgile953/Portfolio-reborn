@@ -102,7 +102,7 @@ export const Navbar = ({
 					duration: 0.2,
 				}}
 				className="flex max-w-fit fixed top-10 inset-x-0 mx-auto border border-dark-700 rounded-lg 
-			 z-[5000] px-8 py-4 items-center justify-center space-x-4 bg-background"
+			 z-5000 px-8 py-4 items-center justify-center space-x-4 bg-background"
 			>
 				{navItems.map((navItem: navItem, idx: number) => (
 					<Link

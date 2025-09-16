@@ -10,7 +10,7 @@ const NotFoundPage = () => {
 			</h1>
 			<div
 				className="absolute pointer-events-none inset-0 flex items-center justify-center dark:bg-dark-100 bg-white
-				[mask-image:radial-gradient(ellipse_at_center,transparent_30%,black)]"
+				mask-[radial-gradient(ellipse_at_center,transparent_30%,black)]"
 			/>
 			<div>
 				<Button icon={<Home />} iconPosition="left" href="/">

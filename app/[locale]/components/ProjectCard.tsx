@@ -47,7 +47,7 @@ const ProjectCard = ({ project }: { project: ProjectProps }) => {
 				<div className="flex flex-col space-y-4 w-full">
 					<h3 className="text-2xl sm:text-3xl font-semibold">{heading}</h3>
 
-					<div className="flex flex-col sm:flex-row justify-between gap-5 flex-grow">
+					<div className="flex flex-col sm:flex-row justify-between gap-5 grow">
 						<TechStack techStack={techStack} />
 						<Link
 							prefetch={true}

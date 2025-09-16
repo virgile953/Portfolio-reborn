@@ -67,7 +67,7 @@ const TechCard = ({
 			</div>
 
 			{/* Text and Progress Bar container */}
-			<div className="space-y-2 flex-grow">
+			<div className="space-y-2 grow">
 				<h4 className="text-lg font-medium">{name}</h4>
 				<p className="text-foreground text-sm">
 					{description}

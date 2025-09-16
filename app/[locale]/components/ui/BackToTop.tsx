@@ -46,7 +46,7 @@ export const BackToTop = ({ animate }: { animate?: boolean }) => {
 				transition={{
 					duration: 0.2,
 				}}
-				className="fixed bottom-10 right-10 z-[5000] rounded-md justify-center gap-2.5  px-2 py-2 border-2 transition-colors
+				className="fixed bottom-10 right-10 z-5000 rounded-md justify-center gap-2.5  px-2 py-2 border-2 transition-colors
 						border-dark-200 	 bg-white		hover:bg-gray-100
 						dark:border-gray-100 dark:bg-black	dark:hover:bg-slate-800"
 				onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}

@@ -27,7 +27,7 @@ const HeroSection = () => {
 			>
 				<div
 					className="absolute pointer-events-none inset-0 flex items-center justify-center bg-background
-								[mask-image:radial-gradient(ellipse_at_center,transparent_30%,black)]"
+								mask-[radial-gradient(ellipse_at_center,transparent_30%,black)]"
 				/>
 			</div>
 
