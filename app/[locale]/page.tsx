@@ -6,6 +6,11 @@ import Projects from "./components/Projects";
 import Footer from "./components/Footer";
 import { BackToTop } from "./components/ui/BackToTop";
 import WorkingOn from "./components/WorkingOn";
+import { routing } from "@/i18n/routing";
+
+export async function generateStaticParams() {
+	return routing.locales.map((locale) => ({ locale }));
+}
 
 export default function Home() {
 	return (

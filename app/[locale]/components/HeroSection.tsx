@@ -2,7 +2,7 @@
 import { ChevronRight } from "lucide-react";
 import Button from "./ui/Button";
 import { TextGenerateEffect } from "./ui/TextGenerate";
-import React from "react";
+import React, { useEffect } from "react";
 import Image from "next/image";
 import { useTheme } from "next-themes";
 import { Tooltip } from "@nextui-org/tooltip";
@@ -10,15 +10,23 @@ import { useTranslations } from "next-intl";
 
 const HeroSection = () => {
 	const theme = useTheme();
+
+	useEffect(() => {
+		// Ensure the theme is loaded from localStorage on mount
+		const localTheme = localStorage.getItem("theme");
+		if (localTheme && localTheme !== theme.theme) {
+			theme.setTheme(localTheme);
+		}
+	}, [theme]);
 	const t = useTranslations("Hero");
 	return (
 		<>
 			<div
-				className="	flex items-center h-screen w-full dark:bg-dark-100 bg-white dark:bg-grid-white/[0.04] bg-grid-black/[0.06]
+				className="	flex items-center h-screen w-full bg-background bg-grid-primary-foreground
 							justify-center absolute top-0 left-0"
 			>
 				<div
-					className="absolute pointer-events-none inset-0 flex items-center justify-center dark:bg-dark-100 bg-white
+					className="absolute pointer-events-none inset-0 flex items-center justify-center bg-background
 								[mask-image:radial-gradient(ellipse_at_center,transparent_30%,black)]"
 				/>
 			</div>
@@ -35,7 +43,7 @@ const HeroSection = () => {
 						words={"Advanced Development & Data Engineering Solutions"}
 						className="text-[40px] md:text-6xl lg:text-7xl font-bold text-center max-w-5xl leading-snug tracking-wide"
 					/>
-					<p className="pt-5 pb-8 text-sm sm:text-base md:text-lg text-dark-200 dark:text-stone-200/70">
+					<p className="pt-5 pb-8 text-sm sm:text-base md:text-lg text-muted-foreground">
 						{t("subtitle")}
 					</p>
 					<div className="flex flex-col sm:flex-row items-center gap-4">

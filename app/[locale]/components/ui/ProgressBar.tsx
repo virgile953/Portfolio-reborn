@@ -36,7 +36,7 @@ const ProgressBar = ({ progress, color, startAnimation }: ProgressBarProps) => {
 
 	return (
 		<div className="mt-2">
-			<div className="h-4 bg-gray-200 dark:bg-dark-300 rounded-md overflow-hidden">
+			<div className="h-4 bg-muted rounded-md overflow-hidden">
 				<div
 					className="h-full border-3 border-l-0 border-t-0 border-b-0 transition-all rounded-lg"
 					style={{

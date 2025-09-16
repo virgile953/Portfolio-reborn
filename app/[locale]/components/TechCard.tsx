@@ -6,6 +6,7 @@ import { EyeIcon } from "lucide-react";
 import { motion, useInView } from "framer-motion";
 import {Link} from '@/i18n/routing';
 import { useRef, useState } from "react";
+import { useTheme } from "next-themes";
 
 const TechCard = ({
 	cardInfo,
@@ -23,7 +24,7 @@ const TechCard = ({
 	const ref = useRef(null);
 	const isVisible = useInView(ref, { once: true });
 	const [isRotating, setIsRotating] = useState(false);
-
+	const {theme} = useTheme();
 	const handleImageClick = () => {
 		setIsRotating((prev) => !prev);
 	};
@@ -36,8 +37,7 @@ const TechCard = ({
 			viewport={{ once: true }}
 			transition={{ duration: 0.5, delay: 0.25 }}
 			className="flex flex-row items-center gap-6 p-4 rounded-lg border-2
-				bg-gray-100 border-gray-100 hover:bg-gray-50 hover:border-gray-100
-				dark:bg-dark-200 dark:border-dark-200 dark:hover:bg-dark-300 dark:hover:border-dark-700
+				bg-background border-border hover:bg-accent hover:border-accent-foreground
 				transition-colors duration-200"
 		>
 			<div
@@ -59,7 +59,7 @@ const TechCard = ({
 						height={40}
 						alt={`${name} logo`}
 						className={`object-contain ${
-							imageUrl.toLowerCase().includes("nextjs") ? "dark:invert" : ""
+							imageUrl.toLowerCase().includes("nextjs") && theme === "dark" ? "invert" : ""
 						} hover:scale-110 transition-transform duration-200`}
 						unoptimized
 					/>
@@ -69,7 +69,7 @@ const TechCard = ({
 			{/* Text and Progress Bar container */}
 			<div className="space-y-2 flex-grow">
 				<h4 className="text-lg font-medium">{name}</h4>
-				<p className="text-dark-200/70 dark:text-white/70 text-sm">
+				<p className="text-foreground text-sm">
 					{description}
 				</p>
 				<ProgressBar

@@ -2,9 +2,10 @@
 
 import { EyeIcon } from "lucide-react";
 import Image from "next/image";
-import {Link} from '@/i18n/routing';
+import { Link } from '@/i18n/routing';
 import TechStack from "./TechStack";
 import { motion } from "framer-motion";
+import { useTheme } from "next-themes";
 
 interface ProjectProps {
 	id: string;
@@ -20,14 +21,14 @@ interface ProjectProps {
 
 const ProjectCard = ({ project }: { project: ProjectProps }) => {
 	const { id, heading, imageUrl, techStack } = project;
-
+	const { theme } = useTheme();
 	return (
 		<motion.div
 			initial={{ opacity: 0, y: 75 }}
 			whileInView={{ opacity: 1, y: 0 }}
 			viewport={{ once: true }}
 			transition={{ duration: 0.5, delay: 0.25 }}
-			className="bg-[#F3F4F3] dark:bg-dark-200 rounded-lg p-4 sm:p-8 space-y-8"
+			className="bg-accent rounded-lg p-4 sm:p-8 space-y-8"
 		>
 			<div className="flex flex-1 flex-col sm:flex-row items-center gap-6 overflow-auto">
 				<Link prefetch={true} href={`/projects/${id}`} className="rounded-lg">
@@ -37,9 +38,8 @@ const ProjectCard = ({ project }: { project: ProjectProps }) => {
 						width={150}
 						height={150}
 						alt={heading}
-						className={`rounded-lg object-cover transition-transform duration-500 ${
-							imageUrl.toLowerCase().includes("portfolio") ? "dark:invert" : ""
-						} scale-90 hover:scale-100`}
+						className={`rounded-lg object-cover transition-transform duration-500 ${imageUrl.toLowerCase().includes("portfolio") && theme === "dark" ? "invert" : ""
+							} scale-90 hover:scale-100`}
 						unoptimized
 					/>
 				</Link>

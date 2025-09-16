@@ -49,7 +49,7 @@ export const TextGenerateEffect = ({
 							className={`${
 								idx > 0 && idx < wordsArray.length - 1 && wordis(word) == true //word != "&"
 									? "text-primary"
-									: "dark:text-white text-black"
+									: "text-foreground"
 							} opacity-0`}
 							style={{
 								filter: filter ? "blur(10px)" : "none",

@@ -1,4 +1,5 @@
 "use strict";
+
 import "../globals.css";
 import type { Metadata } from "next";
 import { Raleway } from "next/font/google";
@@ -16,6 +17,10 @@ export const metadata: Metadata = {
 	title: "Portfolio",
 	description: "Rework of my portfolio website",
 };
+
+export async function generateStaticParams() {
+	return routing.locales.map((locale) => ({ locale }));
+}
 
 export default async function RootLayout({
 	children,
@@ -37,20 +42,21 @@ export default async function RootLayout({
 				suppressHydrationWarning
 				className={raleway.className}
 			>
-				<div className="min-h-screen bg-white dark:bg-dark-100 text-dark-200 dark:text-stone-200 antialiased">
-					<NextIntlClientProvider messages={messages}>
-						<ThemeProvider
-							attribute="class"
-							defaultTheme="dark"
-							enableSystem
-							disableTransitionOnChange
-						>
+				<div className="min-h-screen bg-background text-foreground antialiased">
+					<ThemeProvider
+						attribute="class"
+						defaultTheme="dark"
+						enableSystem
+						disableTransitionOnChange
+					>
+						<NextIntlClientProvider messages={messages}>
 							{children}
-						</ThemeProvider>
-					</NextIntlClientProvider>
+						</NextIntlClientProvider>
+					</ThemeProvider>
+
 				</div>
 				<Analytics />
 			</body>
-		</html>
+		</html >
 	);
 }
