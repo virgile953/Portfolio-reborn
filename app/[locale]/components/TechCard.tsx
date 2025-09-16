@@ -5,7 +5,7 @@ import ProgressBar from "./ui/ProgressBar";
 import { EyeIcon } from "lucide-react";
 import { motion, useInView } from "framer-motion";
 import {Link} from '@/i18n/routing';
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import { useTheme } from "next-themes";
 
 const TechCard = ({
@@ -23,8 +23,15 @@ const TechCard = ({
 	const { name, description, imageUrl, bgColor, progress, link } = cardInfo;
 	const ref = useRef(null);
 	const isVisible = useInView(ref, { once: true });
+	const { theme } = useTheme();
+	const [mounted, setMounted] = useState(false);
+
+	useEffect(() => {
+		setMounted(true);
+	}, []);
+	
 	const [isRotating, setIsRotating] = useState(false);
-	const {theme} = useTheme();
+	
 	const handleImageClick = () => {
 		setIsRotating((prev) => !prev);
 	};
@@ -59,7 +66,7 @@ const TechCard = ({
 						height={40}
 						alt={`${name} logo`}
 						className={`object-contain ${
-							imageUrl.toLowerCase().includes("nextjs") && theme === "dark" ? "invert" : ""
+							mounted && imageUrl.toLowerCase().includes("nextjs") && theme === "dark" ? "invert" : ""
 						} hover:scale-110 transition-transform duration-200`}
 						unoptimized
 					/>

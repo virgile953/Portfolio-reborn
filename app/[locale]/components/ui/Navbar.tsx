@@ -5,8 +5,6 @@ import {
 	UserRound,
 	Contact as ContactIco,
 	Wrench,
-	Moon,
-	Sun,
 } from "lucide-react";
 import {
 	AnimatePresence,
@@ -17,7 +15,6 @@ import {
 import { Link, routing } from "@/i18n/routing";
 import React from "react";
 import { useState } from "react";
-import { useTheme } from "next-themes";
 import { useTranslations } from "next-intl";
 import { usePathname, useRouter } from "@/i18n/routing";
 import { useParams } from "next/navigation";
@@ -47,7 +44,6 @@ export const Navbar = ({
 	];
 
 	const { scrollYProgress } = useScroll();
-	const theme = useTheme();
 	const pathname = usePathname();
 	const router = useRouter();
 	const params = useParams();

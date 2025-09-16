@@ -6,6 +6,7 @@ import { Link } from '@/i18n/routing';
 import TechStack from "./TechStack";
 import { motion } from "framer-motion";
 import { useTheme } from "next-themes";
+import { useEffect, useState } from "react";
 
 interface ProjectProps {
 	id: string;
@@ -22,6 +23,11 @@ interface ProjectProps {
 const ProjectCard = ({ project }: { project: ProjectProps }) => {
 	const { id, heading, imageUrl, techStack } = project;
 	const { theme } = useTheme();
+	const [mounted, setMounted] = useState(false);
+
+	useEffect(() => {
+		setMounted(true);
+	}, []);
 	return (
 		<motion.div
 			initial={{ opacity: 0, y: 75 }}
@@ -38,7 +44,7 @@ const ProjectCard = ({ project }: { project: ProjectProps }) => {
 						width={150}
 						height={150}
 						alt={heading}
-						className={`rounded-lg object-cover transition-transform duration-500 ${imageUrl.toLowerCase().includes("portfolio") && theme === "dark" ? "invert" : ""
+						className={`rounded-lg object-cover transition-transform duration-500 ${mounted && imageUrl.toLowerCase().includes("portfolio") && theme === "dark" ? "invert" : ""
 							} scale-90 hover:scale-100`}
 						unoptimized
 					/>

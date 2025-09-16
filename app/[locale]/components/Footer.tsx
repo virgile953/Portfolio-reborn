@@ -1,10 +1,12 @@
 "use client";
+
 import { Tooltip } from "@nextui-org/tooltip";
-import {Link} from '@/i18n/routing';
-import React from "react";
+import { Link } from '@/i18n/routing';
+import React, { useEffect, useState } from "react";
 import { usePortfolioProjects } from "../../lib/constants";
 import Image from "next/image";
 import { AtSign, CornerDownRight, MapPin, Phone } from "lucide-react";
+import { useTheme } from "next-themes";
 
 const handleClick = () => {
 	const body = document.body;
@@ -16,29 +18,34 @@ const handleClick = () => {
 
 const Footer = () => {
 	const portfolioProjects = usePortfolioProjects();
+	const { theme } = useTheme();
+	const [mounted, setMounted] = useState(false);
 
+	useEffect(() => {
+		setMounted(true);
+	}, []);
 	return (
 		<>
 			<div
-				className="flex flex-col justify-center antialiased relative border border-dark-200 rounded-lg mb-5"
+				className="flex flex-col justify-center antialiased relative border border-border rounded-lg mb-5"
 				id="contact"
 			>
 				<div className="flex justify-between">
 					<ul className="space-y-2.5 relative z-10 text-sm sm:text-base p-6 ">
-						<li className="text-base sm:text-lg font-semibold">Concact</li>
-						<li className="text-dark-200/75 hover:text-dark-200 dark:text-white/50 dark:hover:text-white flex items-center gap-1">
+						<li className="text-base sm:text-lg font-semibold">Contact</li>
+						<li className="text-foreground hover:text-muted-foreground flex items-center gap-1">
 							<AtSign />
 							<a href="mailto:Virgile.barbera@gmail.com" target="_blank">
 								<span>virgile.barbera@gmail.com</span>
 							</a>
 						</li>
-						<li className="text-dark-200/75 hover:text-dark-200 dark:text-white/50 dark:hover:text-white flex items-center gap-1">
+						<li className="text-foreground hover:text-muted-foreground flex items-center gap-1">
 							<Phone />{" "}
 							<a href="tel:+33695239433" target="_blank">
 								{"(+33 ) 6 95 23 94 33"}
 							</a>
 						</li>{" "}
-						<li className="text-dark-200/75 hover:text-dark-200 dark:text-white/50 dark:hover:text-white flex items-center gap-1">
+						<li className="text-foreground hover:text-muted-foreground flex items-center gap-1">
 							<MapPin />
 							<span>
 								15 rue d&apos;Ermont, <br />
@@ -54,7 +61,7 @@ const Footer = () => {
 						{portfolioProjects.slice(0, 4).map((project, key) => (
 							<li
 								key={key}
-								className="text-dark-200/75 hover:text-dark-200 dark:text-white/50 dark:hover:text-white flex items-center gap-1"
+								className="text-foreground hover:text-muted-foreground flex items-center gap-1"
 							>
 								<Link
 									key={key}
@@ -66,7 +73,7 @@ const Footer = () => {
 								</Link>
 							</li>
 						))}
-						<li className="text-dark-200/75 hover:text-dark-200 dark:text-white/50 dark:hover:text-white flex items-center gap-1">
+						<li className="text-foreground hover:text-muted-foreground flex items-center gap-1">
 							<Link prefetch={true} href="/projects" className="flex items-center gap-1">
 								<CornerDownRight />
 								See all
@@ -76,7 +83,7 @@ const Footer = () => {
 
 					<ul className="space-y-2.5 relative z-10 text-sm sm:text-base p-6 flex flex-col">
 						<li className="text-lg font-semibold">Socials</li>
-						<li className="text-dark-200/75 hover:text-dark-200 dark:text-white/50 dark:hover:text-white flex items-center gap-1">
+						<li className="text-foreground hover:text-muted-foreground flex items-center gap-1">
 							<Link
 								href="https://www.linkedin.com/in/virgile-barbera/"
 								target="_blank"
@@ -84,7 +91,7 @@ const Footer = () => {
 								<Tooltip
 									content="LinkedIn"
 									showArrow={true}
-									color="secondary"
+									color="foreground"
 									placement="left"
 								>
 									<Image
@@ -93,17 +100,17 @@ const Footer = () => {
 										height={40}
 										src={"/imgs/footer/linkedin.svg"}
 										alt="github"
-										className="dark:invert"
+										className={mounted && theme === "dark" ? "invert" : ""}
 									></Image>
 								</Tooltip>
 							</Link>
 						</li>
-						<li className="text-dark-200/75 hover:text-dark-200 dark:text-white/50 dark:hover:text-white flex items-center gap-1">
+						<li className="text-foreground hover:text-muted-foreground flex items-center gap-1">
 							<Link href="https://github.com/virgile953" target="_blank">
 								<Tooltip
 									content="GitHub"
 									showArrow={true}
-									color="secondary"
+									color="foreground"
 									placement="left"
 								>
 									<Image
@@ -112,12 +119,12 @@ const Footer = () => {
 										height={40}
 										src={"/imgs/footer/github.svg"}
 										alt="github"
-										className="dark:invert"
+										className={mounted && theme === "dark" ? "invert" : ""}
 									></Image>
 								</Tooltip>
 							</Link>
 						</li>
-						<li className="text-dark-200/75 hover:text-dark-200 dark:text-white/50 dark:hover:text-white flex items-center gap-1">
+						<li className="text-foreground hover:text-muted-foreground flex items-center gap-1">
 							<Link
 								href="https://www.instagram.com/virgilebarbera/"
 								target="_blank"
@@ -125,7 +132,7 @@ const Footer = () => {
 								<Tooltip
 									content="Instagram"
 									showArrow={true}
-									color="secondary"
+									color="foreground"
 									placement="left"
 								>
 									<Image
@@ -134,14 +141,14 @@ const Footer = () => {
 										height={40}
 										src={"/imgs/footer/instagram.svg"}
 										alt="github"
-										className="dark:invert"
+										className={mounted && theme === "dark" ? "invert" : ""}
 										about="coucou"
 									></Image>
 								</Tooltip>
 							</Link>
 						</li>
 					</ul>
-				</div>
+				</div >
 				<footer className="py-6 text-center text-dark-200 dark:text-stone-200">
 					&copy; {new Date().getFullYear()} Virgile Barbera
 					<br /> All rights{" "}
@@ -150,7 +157,7 @@ const Footer = () => {
 					</button>
 					.
 				</footer>
-			</div>
+			</div >
 		</>
 	);
 };
