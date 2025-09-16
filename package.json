@@ -8,6 +8,7 @@
     "start": "next start",
     "lint": "eslint ."
   },
+  "type": "module",
   "dependencies": {
     "@nextui-org/tooltip": "^2.2.7",
     "@typescript-eslint/eslint-plugin": "^8.44.0",
